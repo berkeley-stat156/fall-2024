@@ -4,6 +4,9 @@ title: "Syllabus"
 
 [UNDER CONSTRUCTION]
 
+- [Syllabus for Stat 156](./stat156-syllabus.pdf)
+- [Syllabus for Stat 256](./stat256-syllabus.pdf)
+
 Jump to:
 
 - [About Stat 156](#about-stat-156)
