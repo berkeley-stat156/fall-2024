@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,34 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-schedule .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-week','listing-days',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-week","listing-days"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-schedule'] = new List('listing-schedule', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-buttons .list');
@@ -228,47 +200,6 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./calendar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calendar</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Units</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit 1: Intro</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit 2: Next</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit 3: More</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Datasets</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
@@ -278,14 +209,8 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link active" data-scroll-target="#schedule">Schedule</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -312,11 +237,7 @@ window.Quarto = {
 
 <div id="listing-buttons" class="quarto-listing quarto-listing-container-custom">
 
-  <button style="background-color: purple;"><a href="https://ibm.com">Ed</a></button>
-
-  <button style="background-color: green;"><a href="https://ibm.com">DataHub</a></button>
-
-  <button style="background-color: orange;"><a href="https://ibm.com">Gradescope</a></button>
+  <button style="background-color: orange;"><a href="https://www.gradescope.com/courses/817529">Gradescope</a></button>
 
 <div class="listing-no-matching d-none">
 No matching items
@@ -333,153 +254,12 @@ Welcome to Week 1 of Stat 156
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Welcome to Week 2">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Welcome to Week 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Things are picking up now.</p>
-</div>
-</div>
-<section id="schedule" class="level2">
-<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
-<p>Here we use Quarto’s EJS templating.</p>
-<p>For a style similar to that of <a href="https://stat20.berkeley.edu/fall-2024">Stat 20</a>, modify <code>index.qmd</code> to point to <code>assets/{schedule-alt.ejs,buttons-alt.ejs}</code> and to <code>{schedule-alt.yml,buttons-alt.yml}</code> and <code>_quarto.yml</code> to point to <code>assets/styles-alt.scss</code>.</p>
-<div id="listing-schedule" class="quarto-listing quarto-listing-container-custom">
-
-   <h4 class="anchored">Week 1</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-   
-
-        
-
-           <tr>
-           
-           <th scope="row" rowspan="2">Aug 24:</th>
-           
-           <td><strong class="label label-Lecture">Lecture 1</strong> <a href="./units/unit1.html" target="_blank">Introduction</a></td>
-           
-                <td>
-                
-                  <a href="https://berkeley.edu">Note 1</a>
-                  
-                  <a href="https://berkeley.edu">Note 2</a>
-                  
-                </td>
-           
-                
-           </tr>
-        
-
-           <tr>
-           
-           <td><strong class="label label-Participation">Participation 1</strong> <a href="https://berkeley.edu" target="_blank">Lecture Participation 1</a></td>
-           
-                <td></td>
-           
-                
-           </tr>
-        
-   
-
-        
-
-           <tr>
-           
-           <th scope="row" rowspan="3">Aug 25:</th>
-           
-           <td><strong class="label label-Lab">Lab 1</strong> <a href="https://berkeley.edu" target="_blank">Prerequisite Coding (due Aug 29)</a></td>
-           
-                <td></td>
-           
-                
-           </tr>
-        
-
-           <tr>
-           
-           <td><strong class="label label-Homework">Homework 1A</strong> <a href="https://berkeley.edu" target="_blank">Plotting and Permutation Test (due Aug 31)</a></td>
-           
-                <td></td>
-           
-                
-           </tr>
-        
-
-           <tr>
-           
-           <td><strong class="label label-Homework">Homework 1B</strong> <a href="https://berkeley.edu" target="_blank">Prerequisite Math (due Aug 31)</a></td>
-           
-                <td></td>
-           
-                
-           </tr>
-        
-   
-   </tbody>
-   </table>
-  
-
-   <h4 class="anchored">Week 2</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-   
-
-        
-
-           <tr>
-           
-           <th scope="row" rowspan="2">Aug 29:</th>
-           
-           <td><strong class="label label-Lecture">Lecture 2</strong> <a href="./units/unit2.html" target="_blank">Pandas 1</a></td>
-           
-                <td></td>
-           
-                
-           </tr>
-        
-
-           <tr>
-           
-           <td><strong class="label label-Participation">Participation 2</strong> <a href="./units/unit3.html" target="_blank">Lecture Participation 2</a></td>
-           
-                <td>
-                
-                </td>
-           
-                
-           </tr>
-        
-   
-   </tbody>
-   </table>
-  
-
-<div class="listing-no-matching d-none">
-No matching items
+<p>The first lecture is August 29 at 11:30 am in Moffitt Library 101.</p>
 </div>
 </div>
 
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
