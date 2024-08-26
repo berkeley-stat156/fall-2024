@@ -6,11 +6,11 @@ website:
   google-analytics: G-QR6SS0MKFJ
   sidebar:
     style: docked
-    title: "Stat 156"
+    title: "Stat 156/256"
     logo: assets/stat_bear.png
-    tools:
-      - icon: github
-        href: https://github.com/berkeley-stat156/fall-2024/
+    # tools:
+    #   - icon: github
+    #     href: https://github.com/berkeley-stat156/fall-2024/
     contents:
       - href: index.qmd
         text: Home / Schedule

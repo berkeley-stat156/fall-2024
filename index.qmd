@@ -1,5 +1,5 @@
 ---
-title: "Statistics 156: Causal Inference"
+title: "Statistics 156/256: Causal Inference"
 subtitle: "UC Berkeley, Fall 2024"
 listing:
   # - id: schedule
