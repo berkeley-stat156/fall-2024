@@ -2,8 +2,6 @@
 title: "Syllabus"
 ---
 
-[UNDER CONSTRUCTION]
-
 # Navigation
 
 - [About Stat 156/256](#about-stat-156256)
