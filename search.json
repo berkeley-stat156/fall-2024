@@ -175,7 +175,7 @@
     "href": "staff.html",
     "title": "Staff",
     "section": "",
-    "text": "[UNDER CONSTRUCTION]\nOffice hours are subject to change.\n\n\n\nInstructor: Amanda Coston acoston@berkeley.edu Office hours:  • Thursday 4-5pm, Evans 427 \n\n\nGSI: Mingrui Zhang mingrui_zhang@berkeley.edu Office hours: TBD",
+    "text": "Office hours are subject to change.\n\n\n\nInstructor: Amanda Coston acoston@berkeley.edu Office hours:  • Thursday 4-5pm, Evans 427 \n\n\nGSI: Mingrui Zhang mingrui_zhang@berkeley.edu Office hours: TBD",
     "crumbs": [
       "Staff"
     ]
@@ -192,7 +192,7 @@
     "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 3: More",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.001185694843843189"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.13484424494562117"
   },
   {
     "objectID": "units/unit3.html#latex",
@@ -220,7 +220,7 @@
     "href": "index.html",
     "title": "Statistics 156/256: Causal Inference",
     "section": "",
-    "text": "Gradescope\n\n\nNo matching items\n\n\n[UNDER CONSTRUCTION]\n\n\n\n\n\n\nWelcome to Week 1 of Stat 156\n\n\n\nThe first lecture is August 29 at 11:30 am in Moffitt Library 101.",
+    "text": "Gradescope\n\n\nNo matching items\n\n\n\n\n\n\n\n\nWelcome to Week 1 of Stat 156\n\n\n\nThe first lecture is August 29 at 11:30 am in Moffitt Library 101.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\nThe syllabi are now available for 156 and 256.\n\n\n\n\n\n\n\n\nReadings week 1\n\n\n\nThe reading for the first lecture is Chapter 1 of the textbook A first course in causal inference by Peng Ding. A preprint of the textbook is available on arXiv. The book is available in print here. Add promotion code JSM24 for additional discount (good thru end of September).\n\n\n\n\n\n\n\n\nReadings week 2\n\n\n\nThe reading for the second lecture is Chapter 2 of A first course in causal inference.\nThe readings for the third lecture are\n\nSection 2.1 of the textbook Causal inference: what if by James M. Robins and Miguel A. Hernán. Available online.\nChapter 3 of A first course in causal inference.",
     "crumbs": [
       "Home / Schedule"
     ]
@@ -265,7 +265,7 @@
     "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 1: Intro",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.035648350632989684"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.035088732050098576"
   },
   {
     "objectID": "units/unit1.html#latex",
@@ -300,7 +300,7 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "[UNDER CONSTRUCTION]",
+    "text": "About Stat 156/256\nSyllabus for Stat 156\nSyllabus for Stat 256\n\n\n\nThis course provides an introduction to causal inference using the potential outcomes framework and causal diagrams. We will cover topics such as randomized experiments, observational studies, instrumental variables, and mediation analysis. We will discuss applications of these methods to a variety of fields such as medicine and public policy. The course emphasizes both theory and data analysis. Lectures present concepts and methods, and lab sections focus on applications, derivations, and worked problems often using the statistical language R.\n\n\n\n\nDownload PDF\n\n\n\n\n\n\nDownload PDF",
     "crumbs": [
       "Syllabus"
     ]
@@ -309,8 +309,8 @@
     "objectID": "syllabus.html#about-stat-156256",
     "href": "syllabus.html#about-stat-156256",
     "title": "Syllabus",
-    "section": "About Stat 156/256",
-    "text": "About Stat 156/256\nThis course provides an introduction to causal inference using the potential outcomes framework and causal diagrams. We will cover topics such as randomized experiments, observational studies, instrumental variables, and mediation analysis. We will discuss applications of these methods to a variety of fields such as medicine and public policy. The course emphasizes both theory and data analysis. Lectures present concepts and methods, and lab sections focus on applications, derivations, and worked problems often using the statistical language R.",
+    "section": "",
+    "text": "This course provides an introduction to causal inference using the potential outcomes framework and causal diagrams. We will cover topics such as randomized experiments, observational studies, instrumental variables, and mediation analysis. We will discuss applications of these methods to a variety of fields such as medicine and public policy. The course emphasizes both theory and data analysis. Lectures present concepts and methods, and lab sections focus on applications, derivations, and worked problems often using the statistical language R.",
     "crumbs": [
       "Syllabus"
     ]
@@ -319,8 +319,8 @@
     "objectID": "syllabus.html#syllabus-for-stat-156",
     "href": "syllabus.html#syllabus-for-stat-156",
     "title": "Syllabus",
-    "section": "Syllabus for Stat 156",
-    "text": "Syllabus for Stat 156\n\nDownload PDF",
+    "section": "",
+    "text": "Download PDF",
     "crumbs": [
       "Syllabus"
     ]
@@ -329,8 +329,8 @@
     "objectID": "syllabus.html#syllabus-for-stat-256",
     "href": "syllabus.html#syllabus-for-stat-256",
     "title": "Syllabus",
-    "section": "Syllabus for Stat 256",
-    "text": "Syllabus for Stat 256\n\nDownload PDF",
+    "section": "",
+    "text": "Download PDF",
     "crumbs": [
       "Syllabus"
     ]
