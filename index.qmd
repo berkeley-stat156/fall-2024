@@ -13,11 +13,31 @@ listing:
 ::: {#buttons}
 :::
 
-[UNDER CONSTRUCTION]
+
 
 
 ::: {.callout-note title="Welcome to Week 1 of Stat 156"}
 The first lecture is August 29 at 11:30 am in Moffitt Library 101.
 :::
 
+::: {.callout-note title="Syllabus"}
+The syllabus is now available at https://stat156.berkeley.edu/fall-2024/syllabus.html.
+:::
+
+::: {.callout-note title="Readings week 1"}
+The reading for the first lecture is Chapter 1 of the textbook _A first course in causal inference_.
+A preprint of the textbook is available on [arXiv](https://arxiv.org/pdf/2305.18793). The book is available 
+in print [here](https://www.routledge.com/A-First-Course-in-Causal-Inference/Ding/p/book/9781032758626). 
+ Add promotion code JSM24 for additional discount (good thru end of
+September). 
+:::
+
+::: {.callout-note title="Readings week 2"}
+The reading for the second lecture is Chapter 2 of _A first course in causal inference_.
+
+The readings for the third lecture are 
+1. Section 2.1 of the textbook _Causal inference: what if_ by 
+James M. Robins and Miguel A. Hernán. Available [online](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/)
+2. Chapter 3 of _A first course in causal inference_.
+:::
 
