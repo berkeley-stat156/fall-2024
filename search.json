@@ -192,7 +192,7 @@
     "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 3: More",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.17884907292172794"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.15719218967444565"
   },
   {
     "objectID": "units/unit3.html#latex",
@@ -220,7 +220,7 @@
     "href": "index.html",
     "title": "Statistics 156/256: Causal Inference",
     "section": "",
-    "text": "Gradescope\n\n\nNo matching items\n\n\n\n\n\n\n\n\nWelcome to Week 1 of Stat 156\n\n\n\nThe first lecture is August 29 at 11:30 am in Moffitt Library 101.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\nThe syllabi are now available for 156 and 256.\n\n\n\n\n\n\n\n\nReadings week 1\n\n\n\nThe reading for the first lecture is Chapter 1 of the textbook A first course in causal inference by Peng Ding. A preprint of the textbook is available on arXiv. The book is available in print here. Add promotion code JSM24 for additional discount (good thru end of September).\n\n\n\n\n\n\n\n\nReadings week 2\n\n\n\nThe reading for the second lecture is Chapter 2 of A first course in causal inference.\nThe readings for the third lecture are\n\nSection 2.1 of the textbook Causal inference: what if by James M. Robins and Miguel A. Hernán. Available online.\nChapter 3 of A first course in causal inference.",
+    "text": "Gradescope\n\n\nNo matching items\n\n\n\n\n\n\n\n\nWelcome to Week 1 of Stat 156\n\n\n\nOffice hours on 8/29 will be in Evans 355 from 4-5 pm.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\nThe syllabi are now available for 156 and 256.\n\n\n\n\n\n\n\n\nReadings week 1\n\n\n\nThe reading for the first lecture is Chapter 1 of the textbook A first course in causal inference by Peng Ding. A preprint of the textbook is available on arXiv. The book is available in print here. Add promotion code JSM24 for additional discount (good thru end of September).\n\n\n\n\n\n\n\n\nReadings week 2\n\n\n\nThe reading for the second lecture is Chapter 2 of A first course in causal inference.\nThe readings for the third lecture are\n\nSection 2.1 of the textbook Causal inference: what if by James M. Robins and Miguel A. Hernán. Available online.\nChapter 3 of A first course in causal inference.",
     "crumbs": [
       "Home / Schedule"
     ]
@@ -265,7 +265,7 @@
     "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 1: Intro",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.048102069992859375"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.09174229750341467"
   },
   {
     "objectID": "units/unit1.html#latex",
