@@ -17,7 +17,7 @@ listing:
 
 
 ::: {.callout-note title="Welcome to Week 1 of Stat 156"}
-The first lecture is August 29 at 11:30 am in Moffitt Library 101.
+Office hours on 8/29 will be in Evans 355 from 4-5 pm.
 :::
 
 ::: {.callout-note title="Syllabus"}
