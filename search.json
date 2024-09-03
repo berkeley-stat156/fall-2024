@@ -175,7 +175,7 @@
     "href": "staff.html",
     "title": "Staff",
     "section": "",
-    "text": "Office hours are subject to change.\n\n\n\nInstructor: Amanda Coston acoston@berkeley.edu Office hours:  • Thursday 4:00-5:00 PM, Evans 427 \n\n\nGSI: Mingrui Zhang mingrui_zhang@berkeley.edu Office hours: TBD • Mondays: 2:00-4:00 PM, Evans 428 • Tuesdays: 9:00-11:00 AM, Evans 428",
+    "text": "Office hours are subject to change.\n\n\n\nInstructor: Amanda Coston acoston@berkeley.edu Office hours:  • Thursday 4:00-5:00 PM, Evans 427 \n\n\nGSI: Mingrui Zhang mingrui_zhang@berkeley.edu Office hours: TBD • Mondays: 2:00-4:00 PM, Evans 428  • Tuesdays: 9:00-11:00 AM, Evans 428",
     "crumbs": [
       "Staff"
     ]
@@ -192,7 +192,7 @@
     "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 3: More",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.020768452573440347"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.13867456978307546"
   },
   {
     "objectID": "units/unit3.html#latex",
@@ -265,7 +265,7 @@
     "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 1: Intro",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.01936803406683012"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.18721485775997032"
   },
   {
     "objectID": "units/unit1.html#latex",
