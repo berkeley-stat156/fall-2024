@@ -42,3 +42,9 @@ James M. Robins and Miguel A. Hernán. Available [online](https://www.hsph.harva
 2. Chapter 3 of _A first course in causal inference_.
 :::
 
+::: {.callout-note title="Readings week 3"}
+The reading for the fourth lecture is Chapters 4-6 of _A first course in causal inference_.
+
+The readings for the fifth lecture is Chapters 7-9 of _A first course in causal inference_.
+:::
+
