@@ -18,6 +18,8 @@ website:
         text: Syllabus
       - href: staff.qmd
         text: Staff
+      - href: homeworks.qmd
+        text: Homeworks
       # - href: calendar.qmd
       #   text: Calendar
       # - section: "Units"

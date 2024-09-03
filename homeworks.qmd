@@ -1,0 +1,23 @@
+---
+title: "Homeworks"
+---
+
+# Navigation
+
+- [Homework 1](#homework-1)
+
+
+# Homework 1
+
+**Due**: <span style="color:red">9/12/2024 11.59pm PT</span>
+
+
+- [Download PDF](./HW1.pdf)
+
+<embed
+	src="./HW1.pdf"
+	type="application/pdf"
+	width="100%"
+	height="500px"
+	title="Embedded PDF Viewer"
+/>
