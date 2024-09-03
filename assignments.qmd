@@ -13,7 +13,7 @@ The GSI will provide details on how to submit reports.
 
 | Reading | Link | Due date |
 | --- | --- | --- |
-| Bickel et al 1975 Science: Sex Bias in Graduate Admissions: Data from Berkeley  | [Link](https://www.cs.columbia.edu/~blei/fogm/2022F/readings/Holland1986.pdf) | 9/10/24 |
+| Bickel et al 1975 Science: Sex Bias in Graduate Admissions: Data from Berkeley  | [Link](https://www.jstor.org/stable/pdf/1739581.pdf) | 9/10/24 |
 | Holland 1986 JASA Statistics and Causal Inference | [Link](https://www.cs.columbia.edu/~blei/fogm/2022F/readings/Holland1986.pdf) |9/17/24 |
 | Miratrix 2013 JRSSB Adjusting treatment effect estimates by post-stratication in randomized experiments | [Link](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9868.2012.01048.x) |9/24/24 |
 | Lin 2013 AOAS: Agnostic notes on regression adjustments to experimental data: Reexamining Freedmans critique | [Link](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-7/issue-1/Agnostic-notes-on-regression-adjustments-to-experimental-data--Reexamining/10.1214/12-AOAS583.full) | 10/01/24|
