@@ -1,5 +1,5 @@
 ---
-title: "Homeworks"
+title: "Homeworks for 156"
 ---
 
 # Navigation
@@ -9,7 +9,7 @@ title: "Homeworks"
 
 # Homework 1
 
-**Due**: <span style="color:red">9/12/2024 11.59pm PT</span>
+**Due**: <span style="color:red">9/10/2024 11.59pm PT</span>
 
 
 - [Download PDF](./HW1.pdf)
