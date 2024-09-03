@@ -192,7 +192,7 @@
     "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 3: More",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.13867456978307546"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.08246369170121444"
   },
   {
     "objectID": "units/unit3.html#latex",
@@ -214,6 +214,16 @@
     "title": "",
     "section": "",
     "text": "\\[\n\\newcommand{\\trans}{^\\mathsf{T}}\n\\newcommand{\\eps}{\\epsilon}\n\\]"
+  },
+  {
+    "objectID": "homeworks.html",
+    "href": "homeworks.html",
+    "title": "Homeworks",
+    "section": "",
+    "text": "Navigation\n\nHomework 1\n\n\n\nHomework 1\nDue: 9/12/2024 11.59pm PT\n\nDownload PDF",
+    "crumbs": [
+      "Homeworks"
+    ]
   },
   {
     "objectID": "index.html",
@@ -265,7 +275,7 @@
     "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 1: Intro",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.18721485775997032"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.000498909496665948"
   },
   {
     "objectID": "units/unit1.html#latex",
