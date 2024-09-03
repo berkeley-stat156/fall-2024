@@ -20,6 +20,8 @@ website:
         text: Staff
       - href: homeworks.qmd
         text: Homeworks
+      - href: assignments.qmd
+        text: Reading assignments
       # - href: calendar.qmd
       #   text: Calendar
       # - section: "Units"
