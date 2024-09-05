@@ -192,7 +192,7 @@
     "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 3: More",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.11194235962616934"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.1694386330285614"
   },
   {
     "objectID": "units/unit3.html#latex",
@@ -220,7 +220,7 @@
     "href": "assignments.html",
     "title": "Reading assignments for 256",
     "section": "",
-    "text": "Evaluation\nEach week those of you in 256 will read research papers and write a report describing the research and your evaluation of the work. Each report should be 2-3 pages double-spaced. See below for the list of papers and due dates. The GSI will provide details on how to submit reports.\n\n\nPapers\n\n\n\nReading\nLink\nDue date\n\n\n\n\nBickel et al 1975 Science: Sex Bias in Graduate Admissions: Data from Berkeley\nLink\n9/10/24\n\n\nHolland 1986 JASA Statistics and Causal Inference\nLink\n9/17/24\n\n\nMiratrix 2013 JRSSB Adjusting treatment effect estimates by post-stratication in randomized experiments\nLink\n9/24/24\n\n\nLin 2013 AOAS: Agnostic notes on regression adjustments to experimental data: Reexamining Freedmans critique\nLink\n10/01/24\n\n\nLi, Ding and Rubin 2018 PNAS Asymptotic theory of rerandomization in treatment-control experiments\nLink\n10/08/24\n\n\nRosenbaum and Rubin 1983 Biometrika: The central role of the propensity score in observational studies for causal effects\nLink\n10/15/24\n\n\nLunceford and Davidian 2004 SiM Stratification and weighting via the propensity score in estimation of causal treatment effects: a comparative study\nLink\n10/22/24\n\n\nAngrist Imbens and Rubin 1996 JASA Identification of causal effects using instrumental variables\nLink\n10/29/24\n\n\nImbens 2014 StatSci Instrumental Variables: An Econometricians Perspective\nLink\n11/5/24\n\n\nDing and VanderWeele 2016 Epidemiology: Sensitivity Analysis Without Assumptions\nLink\n11/12/24\n\n\nPearl 1995 Biometrika Causal diagrams for empirical research\nLink\n11/19/24\n\n\nFrangakis and Rubin 2002 Biometrics Principal stratification in causal inference\nLink\n11/26/24",
+    "text": "Evaluation\nEach week those of you in 256 will read research papers and write a report describing the research and your evaluation of the work. Each report should be 2-3 pages double-spaced. See below for the list of papers and due dates. You will submit your report on gradescope.\nThe reports will be graded based on  • Correct identification of the research question  • Accurate summary of the method used in the papers  • Clear summary of the key results  • Thoughtful overall evaluation of the paper (e.g., evaluating the significance, novelty, relevance of the contribution)\n\n\nPapers\n\n\n\nReading\nLink\nDue date\n\n\n\n\nBickel et al 1975 Science: Sex Bias in Graduate Admissions: Data from Berkeley\nLink\n9/10/24\n\n\nHolland 1986 JASA Statistics and Causal Inference\nLink\n9/17/24\n\n\nMiratrix 2013 JRSSB Adjusting treatment effect estimates by post-stratication in randomized experiments\nLink\n9/24/24\n\n\nLin 2013 AOAS: Agnostic notes on regression adjustments to experimental data: Reexamining Freedmans critique\nLink\n10/01/24\n\n\nLi, Ding and Rubin 2018 PNAS Asymptotic theory of rerandomization in treatment-control experiments\nLink\n10/08/24\n\n\nRosenbaum and Rubin 1983 Biometrika: The central role of the propensity score in observational studies for causal effects\nLink\n10/15/24\n\n\nLunceford and Davidian 2004 SiM Stratification and weighting via the propensity score in estimation of causal treatment effects: a comparative study\nLink\n10/22/24\n\n\nAngrist Imbens and Rubin 1996 JASA Identification of causal effects using instrumental variables\nLink\n10/29/24\n\n\nImbens 2014 StatSci Instrumental Variables: An Econometricians Perspective\nLink\n11/5/24\n\n\nDing and VanderWeele 2016 Epidemiology: Sensitivity Analysis Without Assumptions\nLink\n11/12/24\n\n\nPearl 1995 Biometrika Causal diagrams for empirical research\nLink\n11/19/24\n\n\nFrangakis and Rubin 2002 Biometrics Principal stratification in causal inference\nLink\n11/26/24",
     "crumbs": [
       "Reading assignments"
     ]
@@ -285,7 +285,7 @@
     "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 1: Intro",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.04892878586897659"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.10172768013757853"
   },
   {
     "objectID": "units/unit1.html#latex",
