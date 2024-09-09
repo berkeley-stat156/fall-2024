@@ -48,3 +48,13 @@ The reading for the fourth lecture is Chapters 4-6 of _A first course in causal 
 The readings for the fifth lecture is Chapters 7-9 of _A first course in causal inference_.
 :::
 
+::: {.callout-note title="Readings week 4"}
+The reading for the 9/17 lecture is
+1. Chapter 3 of  _Causal inference: what if_.
+2. Chapter 10 of _A first course in causal inference_.
+
+The readings for the 9/19 lecture are
+1. Section 2.4 of  _Causal inference: what if_.
+2. Chapters 11-12 of _A first course in causal inference_.
+:::
+
