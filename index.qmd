@@ -60,7 +60,7 @@ The readings for the 9/19 lecture are
 2. Chapters 11-12 of _A first course in causal inference_.
 :::
 
-::: {.callout-note title="Zoom lecture on 9/10"}
-Reminder that we will be meeting on Zoom for the lecture on September 10th.
+::: {.callout-note title="Homework 2 posted"}
+Homework 2 for 156 is posted in the Homeworks tab.
 :::
 
