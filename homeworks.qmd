@@ -5,6 +5,7 @@ title: "Homeworks for 156"
 # Navigation
 
 - [Homework 1](#homework-1)
+- [Homework 2](#homework-2)
 
 
 # Homework 1
@@ -16,6 +17,21 @@ title: "Homeworks for 156"
 
 <embed
 	src="./HW1.pdf"
+	type="application/pdf"
+	width="100%"
+	height="500px"
+	title="Embedded PDF Viewer"
+/>
+
+# Homework 2
+
+**Due**: <span style="color:red">9/24/2024 11.59pm PT</span>
+
+
+- [Download PDF](./HW2.pdf)
+
+<embed
+	src="./HW2.pdf"
 	type="application/pdf"
 	width="100%"
 	height="500px"
