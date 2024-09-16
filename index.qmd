@@ -64,3 +64,17 @@ The readings for the 9/19 lecture are
 Homework 2 for 156 is posted in the Homeworks tab.
 :::
 
+::: {.callout-note title="Homework 1 and Reading assignment 1 grades released"}
+You can see your grade on Gradescope. Note that starting with homework 2, we will deduct points for failure to properly assign your gradescope pages to the corresponding problem AND for failure to submit code for coding problems.
+:::
+
+::: {.callout-note title="Readings week 5"}
+The readings for the 9/24 lecture are
+
+1. Chapter 12 of _A first course in causal inference_.
+2. Chapter 13 of  _Causal inference: what if_.
+
+The reading for the 9/26 lecture is
+
+1.  Chapter 13 of _A first course in causal inference_.
+:::
