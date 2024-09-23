@@ -22,6 +22,8 @@ website:
         text: Homeworks
       - href: assignments.qmd
         text: Reading assignments
+      - href: project.qmd
+        text: Group Project
       # - href: calendar.qmd
       #   text: Calendar
       # - section: "Units"
