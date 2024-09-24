@@ -68,3 +68,14 @@ The reading for the 9/26 lecture is
 
 1.  Chapter 13 of _A first course in causal inference_.
 :::
+
+::: {.callout-note title="Readings week 6"}
+The readings for the 10/01 lecture are
+
+1. Chapter 4 of _Causal inference: what if_.
+2. Chapter 15 of _A first course in causal inference_. 
+
+The reading for the 10/03 lecture is
+
+1.  Chapters 6 and 7 of _Causal inference: what if_.
+:::
