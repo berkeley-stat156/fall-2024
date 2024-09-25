@@ -79,3 +79,7 @@ The reading for the 10/03 lecture is
 
 1.  Chapters 6 and 7 of _Causal inference: what if_.
 :::
+
+::: {.callout-note title="Homework 3 posted"}
+Homework 3 for 156 is posted in the Homeworks tab.
+:::
