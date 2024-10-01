@@ -83,3 +83,15 @@ The reading for the 10/03 lecture is
 ::: {.callout-note title="Homework 3 posted"}
 Homework 3 for 156 is posted in the Homeworks tab.
 :::
+
+
+::: {.callout-note title="Readings week 7"}
+The readings for the 10/08 lecture are
+
+1. Chapter 16 of _Causal inference: what if_.
+2. Chapter 16 of _A first course in causal inference_. 
+
+The reading for the 10/10 lecture is
+
+1.  Chapters 21-22 of _A first course in causal inference_.
+:::
