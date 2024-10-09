@@ -24,6 +24,8 @@ website:
         text: Reading assignments
       - href: project.qmd
         text: Group Project
+        - href: videos.qmd
+        text: Video presentations
       # - href: calendar.qmd
       #   text: Calendar
       # - section: "Units"

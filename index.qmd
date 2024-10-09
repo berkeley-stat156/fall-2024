@@ -107,3 +107,7 @@ The reading for the 10/17 lecture is
 ::: {.callout-note title="Homework 4 posted"}
 Homework 4 for 156 is posted in the Homeworks tab.
 :::
+
+::: {.callout-note title="Guidelines posted for 256 Paper Presentation Videos"}
+Guidelines for the 256 presentations on academic papers are available in the Video presentations tab.
+:::
