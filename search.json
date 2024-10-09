@@ -21,154 +21,355 @@
     "text": "Data 2"
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html",
-    "href": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html",
-    "title": "Licensing terms",
+    "objectID": "calendar.html",
+    "href": "calendar.html",
+    "title": "Calendar",
     "section": "",
-    "text": "Traitlets is adapted from enthought.traits, Copyright (c) Enthought, Inc., under the terms of the Modified BSD License.\nThis project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2001-, IPython Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the IPython Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/.\n\n\n\nIPython uses a shared copyright model. Each contributor maintains copyright over their contributions to IPython. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the IPython source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire IPython Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the IPython repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) IPython Development Team.\n# Distributed under the terms of the Modified BSD License."
+    "text": "[UNDER CONSTRUCTION]\nWe can just embed the iframe html:"
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
-    "href": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
-    "title": "Licensing terms",
+    "objectID": "quarto_env/lib/python3.7/site-packages/soupsieve-2.4.1.dist-info/licenses/LICENSE.html",
+    "href": "quarto_env/lib/python3.7/site-packages/soupsieve-2.4.1.dist-info/licenses/LICENSE.html",
+    "title": "",
     "section": "",
-    "text": "The IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/."
+    "text": "MIT License\nCopyright (c) 2018 - 2023 Isaac Muse isaacmuse@gmail.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#our-copyright-policy",
-    "href": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "objectID": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html",
+    "href": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html",
+    "title": "UAT for NbAgg backend.",
+    "section": "",
+    "text": "from imp import reload\nThe first line simply reloads matplotlib, uses the nbagg backend and then reloads the backend, just to ensure we have the latest modification to the backend code. Note: The underlying JavaScript will not be updated by this process, so a refresh of the browser after clearing the output and saving is necessary to clear everything fully.\nimport matplotlib\nreload(matplotlib)\n\nmatplotlib.use('nbagg')\n\nimport matplotlib.backends.backend_nbagg\nreload(matplotlib.backends.backend_nbagg)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html#uat-13---animation",
+    "href": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html#uat-13---animation",
+    "title": "UAT for NbAgg backend.",
+    "section": "UAT 13 - Animation",
+    "text": "UAT 13 - Animation\nThe following should generate an animated line:\n\nimport matplotlib.animation as animation\nimport numpy as np\n\nfig, ax = plt.subplots()\n\nx = np.arange(0, 2*np.pi, 0.01)        # x-array\nline, = ax.plot(x, np.sin(x))\n\ndef animate(i):\n    line.set_ydata(np.sin(x+i/10.0))  # update the data\n    return line,\n\n#Init only required for blitting to give a clean slate.\ndef init():\n    line.set_ydata(np.ma.array(x, mask=True))\n    return line,\n\nani = animation.FuncAnimation(fig, animate, np.arange(1, 200), init_func=init,\n                              interval=100., blit=True)\nplt.show()\n\n\nUAT 14 - Keyboard shortcuts in IPython after close of figure\nAfter closing the previous figure (with the close button above the figure) the IPython keyboard shortcuts should still function.\n\n\nUAT 15 - Figure face colours\nThe nbagg honours all colours apart from that of the figure.patch. The two plots below should produce a figure with a red background. There should be no yellow figure.\n\nimport matplotlib\nmatplotlib.rcParams.update({'figure.facecolor': 'red',\n                            'savefig.facecolor': 'yellow'})\nplt.figure()\nplt.plot([3, 2, 1])\n\nplt.show()\n\n\n\nUAT 16 - Events\nPressing any keyboard key or mouse button (or scrolling) should cycle the line line while the figure has focus. The figure should have focus by default when it is created and re-gain it by clicking on the canvas. Clicking anywhere outside of the figure should release focus, but moving the mouse out of the figure should not release focus.\n\nimport itertools\nfig, ax = plt.subplots()\nx = np.linspace(0,10,10000)\ny = np.sin(x)\nln, = ax.plot(x,y)\nevt = []\ncolors = iter(itertools.cycle(['r', 'g', 'b', 'k', 'c']))\ndef on_event(event):\n    if event.name.startswith('key'):\n        fig.suptitle('%s: %s' % (event.name, event.key))\n    elif event.name == 'scroll_event':\n        fig.suptitle('%s: %s' % (event.name, event.step))\n    else:\n        fig.suptitle('%s: %s' % (event.name, event.button))\n    evt.append(event)\n    ln.set_color(next(colors))\n    fig.canvas.draw()\n    fig.canvas.draw_idle()\n\nfig.canvas.mpl_connect('button_press_event', on_event)\nfig.canvas.mpl_connect('button_release_event', on_event)\nfig.canvas.mpl_connect('scroll_event', on_event)\nfig.canvas.mpl_connect('key_press_event', on_event)\nfig.canvas.mpl_connect('key_release_event', on_event)\n\nplt.show()\n\n\n\nUAT 17 - Timers\nSingle-shot timers follow a completely different code path in the nbagg backend than regular timers (such as those used in the animation example above.) The next set of tests ensures that both “regular” and “single-shot” timers work properly.\nThe following should show a simple clock that updates twice a second:\n\nimport time\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center')\n\ndef update(text):\n    text.set(text=time.ctime())\n    text.axes.figure.canvas.draw()\n    \ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\ntimer.start()\nplt.show()\n\nHowever, the following should only update once and then stop:\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center') \ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\n\ntimer.single_shot = True\ntimer.start()\n\nplt.show()\n\nAnd the next two examples should never show any visible text at all:\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center')\ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\n\ntimer.start()\ntimer.stop()\n\nplt.show()\n\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center')\ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\n\ntimer.single_shot = True\ntimer.start()\ntimer.stop()\n\nplt.show()\n\n\n\nUAT 18 - stopping figure when removed from DOM\nWhen the div that contains from the figure is removed from the DOM the figure should shut down it’s comm, and if the python-side figure has no more active comms, it should destroy the figure. Repeatedly running the cell below should always have the same figure number\n\nfig, ax = plt.subplots()\nax.plot(range(5))\nplt.show()\n\nRunning the cell below will re-show the figure. After this, re-running the cell above should result in a new figure number.\n\nfig.canvas.manager.reshow()\n\n\n\nUAT 19 - Blitting\nClicking on the figure should plot a green horizontal line moving up the axes.\n\nimport itertools\n\ncnt = itertools.count()\nbg = None\n\ndef onclick_handle(event):\n    \"\"\"Should draw elevating green line on each mouse click\"\"\"\n    global bg\n    if bg is None:\n        bg = ax.figure.canvas.copy_from_bbox(ax.bbox) \n    ax.figure.canvas.restore_region(bg)\n\n    cur_y = (next(cnt) % 10) * 0.1\n    ln.set_ydata([cur_y, cur_y])\n    ax.draw_artist(ln)\n    ax.figure.canvas.blit(ax.bbox)\n\nfig, ax = plt.subplots()\nax.plot([0, 1], [0, 1], 'r')\nln, = ax.plot([0, 1], [0, 0], 'g', animated=True)\nplt.show()\nax.figure.canvas.draw()\n\nax.figure.canvas.mpl_connect('button_press_event', onclick_handle)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "This project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2001-2015, IPython Development Team\nCopyright (c) 2015-, Jupyter Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the Jupyter Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/.\n\n\n\nJupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "The Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "Jupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Error.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Error.html",
+    "title": "",
+    "section": "",
+    "text": "0/0\n\n\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)\n/tmp/ipykernel_1277493/182040962.py in &lt;module&gt;\n----&gt; 1 0/0\n\nZeroDivisionError: division by zero"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/HelloWorld.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/HelloWorld.html",
+    "title": "",
+    "section": "",
+    "text": "print(\"Hello World\")\n\nHello World"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute B.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute B.html",
+    "title": "Ensure notebooks can execute in parallel",
+    "section": "",
+    "text": "This notebook uses a file system based “lock” to assert that two instances of the notebook kernel will run in parallel. Each instance writes to a file in a temporary directory, and then tries to read the other file from the temporary directory, so that running them in sequence will fail, but running them in parallel will succeed.\nTwo notebooks are launched, each which sets the this_notebook variable. One notebook is set to this_notebook = 'A' and the other this_notebook = 'B'.\n\nimport os\nimport os.path\nimport tempfile\nimport time\n\n\n# the variable this_notebook is injectected in a cell above by the test framework.\nthis_notebook = 'B'\nother_notebook = 'A'\ndirectory = os.environ['NBEXECUTE_TEST_PARALLEL_TMPDIR']\nwith open(os.path.join(directory, 'test_file_{}.txt'.format(this_notebook)), 'w') as f:\n    f.write('Hello from {}'.format(this_notebook))\n\n\nstart = time.time()\ntimeout = 5\nend = start + timeout\ntarget_file = os.path.join(directory, 'test_file_{}.txt'.format(other_notebook))\nwhile time.time() &lt; end:\n    time.sleep(0.1)\n    if os.path.exists(target_file):\n        with open(target_file, 'r') as f:\n            text = f.read()\n        if text == 'Hello from {}'.format(other_notebook):\n            break\nelse:\n    assert False, \"Timed out – didn't get a message from {}\".format(other_notebook)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Empty Cell.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Empty Cell.html",
+    "title": "",
+    "section": "",
+    "text": "Test that executing skips over an empty cell.\n\n\"Code 1\"\n\n'Code 1'\n\n\n\n\"Code 2\"\n\n'Code 2'"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Clear Output.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Clear Output.html",
+    "title": "",
+    "section": "",
+    "text": "from __future__ import print_function\nfrom IPython.display import clear_output\n\n\nfor i in range(10):\n    clear_output()\n    print(i)\n\n9\n\n\n\nprint(\"Hello world\")\nclear_output()\n\n\nprint(\"Hello world\", end='')\nclear_output(wait=True)  # no output after this\n\nHello world\n\n\n\nprint(\"Hello\", end='')\nclear_output(wait=True)  # here we have new output after wait=True\nprint(\"world\", end='')\n\nworld\n\n\n\nhandle0 = display(\"Hello world\", display_id=\"id0\")\n\n'Hello world'\n\n\n\nhandle1 = display(\"Hello\", display_id=\"id1\")\n\n'world'\n\n\n\nhandle1.update('world')\n\n\nhandle2 = display(\"Hello world\", display_id=\"id2\")\nclear_output()  # clears all output, also with display_ids\n\n\nhandle3 = display(\"Hello world\", display_id=\"id3\")\nclear_output(wait=True)\n\n'Hello world'\n\n\n\nhandle4 = display(\"Hello\", display_id=\"id4\")\nclear_output(wait=True)\nprint('world', end='')\n\nworld\n\n\n\nhandle4.update('Hello world')  # it is cleared, so it should not show up in the above cell"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Check History in Memory.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Check History in Memory.html",
+    "title": "",
+    "section": "",
+    "text": "from IPython import get_ipython\n\n\nip = get_ipython()\nassert ip.history_manager.hist_file == ':memory:'"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Factorials.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Factorials.html",
+    "title": "",
+    "section": "",
+    "text": "i, j = 1, 1\n\n\nfor m in range(10):\n    i, j = j, i + j\n    print(j)\n\n2\n3\n5\n8\n13\n21\n34\n55\n89\n144"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Inline Image.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Inline Image.html",
+    "title": "",
+    "section": "",
+    "text": "from IPython.display import Image\n\n\nImage('python.png')"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Autokill.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Autokill.html",
+    "title": "",
+    "section": "",
+    "text": "import os\nimport signal\npid = os.getpid()\nos.kill(pid, signal.SIGTERM)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/SVG.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/SVG.html",
+    "title": "",
+    "section": "",
+    "text": "from IPython.display import SVG\n\n\nSVG(data='''\n&lt;svg height=\"100\" width=\"100\"&gt;\n    &lt;circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"2\" fill=\"red\" /&gt;\n&lt;/svg&gt;''')"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/JupyterWidgets.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/JupyterWidgets.html",
+    "title": "",
+    "section": "",
+    "text": "import ipywidgets\nlabel = ipywidgets.Label('Hello World')\ndisplay(label)\n\n\n\n\n\n# it should also handle custom msg'es\nlabel.send({'msg': 'Hello'})"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "This project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2001-2015, IPython Development Team\nCopyright (c) 2015-, Jupyter Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the Jupyter Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/.\n\n\n\nJupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#about-the-jupyter-development-team",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#about-the-jupyter-development-team",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "The Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#our-copyright-policy",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#our-copyright-policy",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "Jupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html",
+    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html",
+    "title": "Authors",
+    "section": "",
+    "text": "pyqode.qt: Colin Duquesnoy (@ColinDuquesnoy)\nspyderlib.qt: Pierre Raybaut (@PierreRaybaut)\nqt-helpers: Thomas Robitaille (@astrofrog)\n\n\n\n\n\nDaniel Althviz (@dalthviz)\nCarlos Cordoba (@ccordoba12)\nC.A.M. Gerlach (@CAM-Gerlach)\nSpyder Development Team (Spyder-IDE)\n\n\n\n\n\nThe QtPy Contributors"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#original-authors",
+    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#original-authors",
+    "title": "Authors",
+    "section": "",
+    "text": "pyqode.qt: Colin Duquesnoy (@ColinDuquesnoy)\nspyderlib.qt: Pierre Raybaut (@PierreRaybaut)\nqt-helpers: Thomas Robitaille (@astrofrog)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#current-maintainers",
+    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#current-maintainers",
+    "title": "Authors",
+    "section": "",
+    "text": "Daniel Althviz (@dalthviz)\nCarlos Cordoba (@ccordoba12)\nC.A.M. Gerlach (@CAM-Gerlach)\nSpyder Development Team (Spyder-IDE)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#contributors",
+    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#contributors",
+    "title": "Authors",
+    "section": "",
+    "text": "The QtPy Contributors"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html",
+    "href": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "This project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2015, IPython Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the IPython Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/.\n\n\n\nIPython uses a shared copyright model. Each contributor maintains copyright over their contributions to IPython. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the IPython source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire IPython Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the IPython repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) IPython Development Team.\n# Distributed under the terms of the Modified BSD License."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
+    "href": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
+    "title": "Licensing terms",
+    "section": "",
+    "text": "The IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "href": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#our-copyright-policy",
     "title": "Licensing terms",
     "section": "",
     "text": "IPython uses a shared copyright model. Each contributor maintains copyright over their contributions to IPython. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the IPython source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire IPython Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the IPython repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) IPython Development Team.\n# Distributed under the terms of the Modified BSD License."
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/idna-3.7.dist-info/LICENSE.html",
-    "href": "quarto_env/lib/python3.7/site-packages/idna-3.7.dist-info/LICENSE.html",
-    "title": "",
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
     "section": "",
-    "text": "BSD 3-Clause License\nCopyright (c) 2013-2024, Kim Davies and contributors. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions.html",
-    "title": "",
-    "section": "",
-    "text": "# üñîçø∂é\nraise Exception(\"message\")\n\n\n---------------------------------------------------------------------------\nException                                 Traceback (most recent call last)\n&lt;ipython-input-1-9abc744909d9&gt; in &lt;module&gt;\n      1 # üñîçø∂é\n----&gt; 2 raise Exception(\"message\")\n\nException: message\n\n\n\n\nprint('ok')\n\nok"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Sleep1s.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Sleep1s.html",
-    "title": "",
-    "section": "",
-    "text": "import time\nimport datetime\n\n\nt0 = datetime.datetime.utcnow()\ntime.sleep(1)\nt1 = datetime.datetime.utcnow()\n\n\ntime_format = '%Y-%m-%dT%H:%M:%S.%fZ'\nprint(t0.strftime(time_format), end='')\n\n\nprint(t1.strftime(time_format), end='')"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Unicode.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Unicode.html",
-    "title": "",
-    "section": "",
-    "text": "print('☃')\n\n☃"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Execution with Cell Tag.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Execution with Cell Tag.html",
-    "title": "",
-    "section": "",
-    "text": "print(\"a long running cell\")\n\n\nprint('ok')\n\nok"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute A.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute A.html",
-    "title": "Ensure notebooks can execute in parallel",
-    "section": "",
-    "text": "This notebook uses a file system based “lock” to assert that two instances of the notebook kernel will run in parallel. Each instance writes to a file in a temporary directory, and then tries to read the other file from the temporary directory, so that running them in sequence will fail, but running them in parallel will succeed.\nTwo notebooks are launched, each which sets the this_notebook variable. One notebook is set to this_notebook = 'A' and the other this_notebook = 'B'.\n\nimport os\nimport os.path\nimport tempfile\nimport time\n\n\n# the variable this_notebook is injectected in a cell above by the test framework.\nthis_notebook = 'A'\nother_notebook = 'B'\ndirectory = os.environ['NBEXECUTE_TEST_PARALLEL_TMPDIR']\nwith open(os.path.join(directory, 'test_file_{}.txt'.format(this_notebook)), 'w') as f:\n    f.write('Hello from {}'.format(this_notebook))\n\n\nstart = time.time()\ntimeout = 5\nend = start + timeout\ntarget_file = os.path.join(directory, 'test_file_{}.txt'.format(other_notebook))\nwhile time.time() &lt; end:\n    time.sleep(0.1)\n    if os.path.exists(target_file):\n        with open(target_file, 'r') as f:\n            text = f.read()\n        if text == 'Hello from {}'.format(other_notebook):\n            break\nelse:\n    assert False, \"Timed out – didn't get a message from {}\".format(other_notebook)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Output.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Output.html",
-    "title": "",
-    "section": "",
-    "text": "import ipywidgets as widgets\nfrom IPython.display import clear_output\noutput1 = widgets.Output()\noutput1\n\n\n\n\n\nprint(\"hi\")\nwith output1:\n    print(\"in output\")\n\nhi\n\n\n\nwith output1:\n    raise ValueError(\"trigger msg_type=error\")\n\n\nimport ipywidgets as widgets\noutput2 = widgets.Output()\noutput2\n\n\n\n\n\nprint(\"hi2\")\nwith output2:\n    print(\"in output2\")\n    clear_output(wait=True)\n\nhi2\n\n\n\nimport ipywidgets as widgets\noutput3 = widgets.Output()\noutput3\n\n\n\n\n\nprint(\"hi3\")\nwith output3:\n    print(\"hello\")\n    clear_output(wait=True)\n    print(\"world\")\n\nhi3\n\n\n\nimport ipywidgets as widgets\noutput4 = widgets.Output()\noutput4\n\n\n\n\n\nprint(\"hi4\")\nwith output4:\n    print(\"hello world\")\n    clear_output()\n\nhi4\n\n\n\nimport ipywidgets as widgets\noutput5 = widgets.Output()\noutput5\n\n\n\n\n\nprint(\"hi5\")\nwith output5:\n    display(\"hello world\") # this is not a stream but plain text\nclear_output()\n\n\nimport ipywidgets as widgets\noutput_outer = widgets.Output()\noutput_inner = widgets.Output()\noutput_inner\n\n\n\n\n\noutput_outer\n\n\n\n\n\nwith output_inner:\n    print('in inner')\n    with output_outer:\n        print('in outer')\n    print('also in inner')"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions with Cell Tags.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions with Cell Tags.html",
-    "title": "",
-    "section": "",
-    "text": "import sys\nprint(\"hello\")\nprint(\"errorred\", file=sys.stderr)\n# üñîçø∂é\nraise Exception(\"message\")\n\nhello\n\n\nerrorred\n\n\n\n---------------------------------------------------------------------------\nException                                 Traceback (most recent call last)\nCell In[1], line 5\n      3 print(\"errorred\", file=sys.stderr)\n      4 # üñîçø∂é\n----&gt; 5 raise Exception(\"message\")\n\nException: message\n\n\n\n\nprint('ok')\n\nok"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Interrupt.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Interrupt.html",
-    "title": "",
-    "section": "",
-    "text": "while True: continue\n\n\n---------------------------------------------------------------------------\nKeyboardInterrupt                         Traceback (most recent call last)\n&lt;ipython-input-1-31d18a52bf41&gt; in &lt;module&gt;\n----&gt; 1 while True: continue\n\nKeyboardInterrupt: \n\n\n\n\nprint(\"done\")\n\ndone"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/update-display-id.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/update-display-id.html",
-    "title": "",
-    "section": "",
-    "text": "ip = get_ipython()\n\nfrom IPython.display import display\n\ndef display_with_id(obj, display_id, update=False, execute_result=False):\n    iopub = ip.kernel.iopub_socket\n    session = get_ipython().kernel.session\n    data, md = ip.display_formatter.format(obj)\n    transient = {'display_id': str(display_id)}\n    content = {'data': data, 'metadata': md, 'transient': transient}\n    if execute_result:\n      msg_type = 'execute_result'\n      content['execution_count'] = ip.execution_count\n    else:\n      msg_type = 'update_display_data' if update else 'display_data'\n    session.send(iopub, msg_type, content, parent=ip.parent_header)\n\n\ndisplay('above')\ndisplay_with_id(1, 'here')\ndisplay('below')\n\n'above'\n\n\n8\n\n\n'below'\n\n\n\ndisplay_with_id(2, 'here')\ndisplay_with_id(3, 'there')\ndisplay_with_id(4, 'here')\n\n8\n\n\n6\n\n\n8\n\n\n\ndisplay_with_id(5, 'there')\ndisplay_with_id(6, 'there', update=True)\n\n6\n\n\n\ndisplay_with_id(7, 'here')\ndisplay_with_id(8, 'here', update=True)\ndisplay_with_id(9, 'result', execute_result=True)\n\n8\n\n\n10\n\n\n\ndisplay_with_id(10, 'result', update=True)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Disable Stdin.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Disable Stdin.html",
-    "title": "",
-    "section": "",
-    "text": "try:\n    input = raw_input\nexcept:\n    pass\n\nname = input(\"name: \")"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Other Comms.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Other Comms.html",
-    "title": "",
-    "section": "",
-    "text": "from ipykernel.comm import Comm\n\n\ncomm = Comm('this-comm-tests-a-missing-handler', data={'id': 'foo'})\n\n\ncomm.send(data={'id': 'bar'})"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/UnicodePy3.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/UnicodePy3.html",
-    "title": "",
-    "section": "",
-    "text": "print('☃')\n\n☃"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html",
-    "title": "The Jupyter licensing terms",
-    "section": "",
-    "text": "Jupyter is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2015-, Jupyter Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the Jupyter Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects. A full list with details is kept in the documentation directory, in the file about/credits.txt.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/.\n\n\n\nJupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. It is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
-    "title": "The Jupyter licensing terms",
-    "section": "",
-    "text": "The Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects. A full list with details is kept in the documentation directory, in the file about/credits.txt.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#our-copyright-policy",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#our-copyright-policy",
-    "title": "The Jupyter licensing terms",
-    "section": "",
-    "text": "Jupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. It is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/pyzmq-26.1.0.dist-info/licenses/LICENSE.html",
-    "href": "quarto_env/lib/python3.7/site-packages/pyzmq-26.1.0.dist-info/licenses/LICENSE.html",
-    "title": "",
-    "section": "",
-    "text": "BSD 3-Clause License\nCopyright (c) 2009-2012, Brian Granger, Min Ragan-Kelley\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-  },
-  {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "Project for 156/256",
-    "section": "",
-    "text": "Navigation\n\nProject Guidelines\n\n\n\nGuidelines\n\nDownload PDF",
+    "text": "This work is licensed under a Creative Commons Attribution 4.0 International License.",
     "crumbs": [
-      "Group Project"
+      "License"
     ]
+  },
+  {
+    "objectID": "staff.html",
+    "href": "staff.html",
+    "title": "Staff",
+    "section": "",
+    "text": "Office hours are subject to change.\n\n\n\nInstructor: Amanda Coston acoston@berkeley.edu Office hours:  • Thursday 4:00-5:00 PM, Evans 427 \n\n\nGSI: Mingrui Zhang mingrui_zhang@berkeley.edu Office hours: TBD • Mondays: 2:00-4:00 PM, Evans 428  • Tuesdays: 9:00-11:00 AM, Evans 428",
+    "crumbs": [
+      "Staff"
+    ]
+  },
+  {
+    "objectID": "units/unit3.html",
+    "href": "units/unit3.html",
+    "title": "Unit 3: More",
+    "section": "",
+    "text": "[UNDER CONSTRUCTION]\nThis is an example of using qmd as the source document with pdf as one target. I’ve taken out the qmd stuff that doesn’t seem to render to pdf."
+  },
+  {
+    "objectID": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
+    "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
+    "title": "Unit 3: More",
+    "section": "Evaluated Python code chunk, with a plot",
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.086065988686519"
+  },
+  {
+    "objectID": "units/unit3.html#latex",
+    "href": "units/unit3.html#latex",
+    "title": "Unit 3: More",
+    "section": "LaTeX",
+    "text": "LaTeX\n\\[\n\\theta = \\int_0^\\infty f(x,\\theta)d\\theta\n\\]"
+  },
+  {
+    "objectID": "units/unit3.html#latex-macro",
+    "href": "units/unit3.html#latex-macro",
+    "title": "Unit 3: More",
+    "section": "LaTeX macro",
+    "text": "LaTeX macro\n\nWarning: having include-before-body in the yaml header of this file, as seemingly needed to enable macros, causes extra space at top of page.\n\n\\[\nA = X \\trans Y\n\\]"
+  },
+  {
+    "objectID": "units/macros.html",
+    "href": "units/macros.html",
+    "title": "",
+    "section": "",
+    "text": "\\[\n\\newcommand{\\trans}{^\\mathsf{T}}\n\\newcommand{\\eps}{\\epsilon}\n\\]"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Reading assignments for 256",
+    "section": "",
+    "text": "Evaluation\nEach week those of you in 256 will read research papers and write a report describing the research and your evaluation of the work. Each report should be 2-3 pages double-spaced. See below for the list of papers and due dates. You will submit your report on gradescope.\nThe reports will be graded based on  • Correct identification of the research question  • Accurate summary of the method used in the papers  • Clear summary of the key results  • Thoughtful overall evaluation of the paper (e.g., evaluating the significance, novelty, relevance of the contribution)\n\n\nPapers\n\n\n\nReading\nLink\nDue date\n\n\n\n\nBickel et al 1975 Science: Sex Bias in Graduate Admissions: Data from Berkeley\nLink\n9/10/24\n\n\nHolland 1986 JASA Statistics and Causal Inference\nLink\n9/17/24\n\n\nMiratrix 2013 JRSSB Adjusting treatment effect estimates by post-stratication in randomized experiments\nLink\n9/24/24\n\n\nLin 2013 AOAS: Agnostic notes on regression adjustments to experimental data: Reexamining Freedmans critique\nLink\n10/01/24\n\n\nLi, Ding and Rubin 2018 PNAS Asymptotic theory of rerandomization in treatment-control experiments\nLink\n10/08/24\n\n\nRosenbaum and Rubin 1983 Biometrika: The central role of the propensity score in observational studies for causal effects\nLink\n10/15/24\n\n\nLunceford and Davidian 2004 SiM Stratification and weighting via the propensity score in estimation of causal treatment effects: a comparative study\nLink\n10/22/24\n\n\nAngrist Imbens and Rubin 1996 JASA Identification of causal effects using instrumental variables\nLink\n10/29/24\n\n\nImbens 2014 StatSci Instrumental Variables: An Econometricians Perspective\nLink\n11/5/24\n\n\nDing and VanderWeele 2016 Epidemiology: Sensitivity Analysis Without Assumptions\nLink\n11/12/24\n\n\nPearl 1995 Biometrika Causal diagrams for empirical research\nLink\n11/19/24\n\n\nFrangakis and Rubin 2002 Biometrics Principal stratification in causal inference\nLink\n11/26/24",
+    "crumbs": [
+      "Reading assignments"
+    ]
+  },
+  {
+    "objectID": "homeworks.html",
+    "href": "homeworks.html",
+    "title": "Homeworks for 156",
+    "section": "",
+    "text": "Navigation\n\nHomework 1\nHomework 2\nHomework 3\n\n\n\nHomework 1\nDue: 9/10/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 2\nDue: 9/24/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 3\nDue: 10/08/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 4\nDue: 10/22/2024 11.59pm PT\n\nDownload PDF",
+    "crumbs": [
+      "Homeworks"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistics 156/256: Causal Inference",
+    "section": "",
+    "text": "Gradescope\n\n\nNo matching items\n\n\n\n\n\n\n\n\nReadings week 1\n\n\n\nThe reading for the first lecture is Chapter 1 of the textbook A first course in causal inference by Peng Ding. A preprint of the textbook is available on arXiv. The book is available in print here. Add promotion code JSM24 for additional discount (good thru end of September).\n\n\n\n\n\n\n\n\nReadings week 2\n\n\n\nThe reading for the second lecture is Chapter 2 of A first course in causal inference.\nThe readings for the third lecture are\n\nSection 2.1 of the textbook Causal inference: what if by James M. Robins and Miguel A. Hernán. Available online.\nChapter 3 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nReadings week 3\n\n\n\nThe reading for the fourth lecture is Chapters 4-6 of A first course in causal inference.\nThe readings for the fifth lecture is Chapters 7-9 of A first course in causal inference.\n\n\n\n\n\n\n\n\nReadings week 4\n\n\n\nThe reading for the 9/17 lecture is\n\nChapter 3 of Causal inference: what if.\nChapter 10 of A first course in causal inference.\n\nThe readings for the 9/19 lecture are\n\nSection 2.4 of Causal inference: what if.\nChapters 11-12 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nHomework 2 posted\n\n\n\nHomework 2 for 156 is posted in the Homeworks tab.\n\n\n\n\n\n\n\n\nHomework 1 and Reading assignment 1 grades released\n\n\n\nYou can see your grade on Gradescope. Note that starting with homework 2, we will deduct points for failure to properly assign your gradescope pages to the corresponding problem AND for failure to submit code for coding problems.\n\n\n\n\n\n\n\n\nReadings week 5\n\n\n\nThe readings for the 9/24 lecture are\n\nChapter 12 of A first course in causal inference.\nChapter 13 of Causal inference: what if.\n\nThe reading for the 9/26 lecture is\n\nChapter 13 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nReadings week 6\n\n\n\nThe readings for the 10/01 lecture are\n\nChapter 4 of Causal inference: what if.\nChapter 15 of A first course in causal inference.\n\nThe reading for the 10/03 lecture is\n\nChapters 6 and 7 of Causal inference: what if.\n\n\n\n\n\n\n\n\n\nHomework 3 posted\n\n\n\nHomework 3 for 156 is posted in the Homeworks tab.\n\n\n\n\n\n\n\n\nReadings week 7\n\n\n\nThe readings for the 10/08 lecture are\n\nChapter 16 of Causal inference: what if.\nChapter 16 of A first course in causal inference.\n\nThe reading for the 10/10 lecture is\n\nChapters 21-22 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nReadings week 8\n\n\n\nThere are no readings for the 10/15 lecture. Instead of a usual lecture, we will use this time for you to work on your group projects.\nThe reading for the 10/17 lecture is\n\nChapters 23 and 25 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nHomework 4 posted\n\n\n\nHomework 4 for 156 is posted in the Homeworks tab.\n\n\n\n\n\n\n\n\nGuidelines posted for 256 Paper Presentation Videos\n\n\n\nGuidelines for the 256 presentations on academic papers are available in the Video presentations tab.",
+    "crumbs": [
+      "Home / Schedule"
+    ]
+  },
+  {
+    "objectID": "units/unit2.html",
+    "href": "units/unit2.html",
+    "title": "Unit 2: Next",
+    "section": "",
+    "text": "[UNDER CONSTRUCTION]\nThis is an example of using an ipynb file as source rather than qmd. It follows instructions from https://github.com/DS-100/course-notes/README.md.\nLink to the data."
+  },
+  {
+    "objectID": "units/unit2.html#latex",
+    "href": "units/unit2.html#latex",
+    "title": "Unit 2: Next",
+    "section": "\\(\\LaTeX\\)",
+    "text": "\\(\\LaTeX\\)\nHere is some \\(\\LaTeX\\). \\[\n\\theta = 7\n\\]"
+  },
+  {
+    "objectID": "units/unit2.html#evaluated-python-code",
+    "href": "units/unit2.html#evaluated-python-code",
+    "title": "Unit 2: Next",
+    "section": "Evaluated Python code",
+    "text": "Evaluated Python code\nNote that to get code output shown, the underlying notebook must have executed the code.\n\n\nCode\na=7\nprint(a)\n\n\n7"
+  },
+  {
+    "objectID": "units/unit2.html#callout",
+    "href": "units/unit2.html#callout",
+    "title": "Unit 2: Next",
+    "section": "Callout",
+    "text": "Callout\n\n\n\n\n\n\nTip with Title\n\n\n\nThis is an example of a callout with a title."
+  },
+  {
+    "objectID": "units/unit1.html",
+    "href": "units/unit1.html",
+    "title": "Unit 1: Intro",
+    "section": "",
+    "text": "[UNDER CONSTRUCTION]\nThis is an example of using qmd as the source document."
+  },
+  {
+    "objectID": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
+    "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
+    "title": "Unit 1: Intro",
+    "section": "Evaluated Python code chunk, with a plot",
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.18853850164144462"
+  },
+  {
+    "objectID": "units/unit1.html#latex",
+    "href": "units/unit1.html#latex",
+    "title": "Unit 1: Intro",
+    "section": "\\(\\LaTeX\\)",
+    "text": "\\(\\LaTeX\\)\n\\[\n\\theta = \\int_0^\\infty f(x,\\theta)d\\theta\n\\]"
+  },
+  {
+    "objectID": "units/unit1.html#styled-div-via-direct-html",
+    "href": "units/unit1.html#styled-div-via-direct-html",
+    "title": "Unit 1: Intro",
+    "section": "Styled div via direct html",
+    "text": "Styled div via direct html\n\nThis content can be styled via the border class."
+  },
+  {
+    "objectID": "units/unit1.html#a-callout",
+    "href": "units/unit1.html#a-callout",
+    "title": "Unit 1: Intro",
+    "section": "A callout",
+    "text": "A callout\n\n\n\n\n\n\nTip with Title\n\n\n\nThis is an example of a callout with a title."
+  },
+  {
+    "objectID": "units/unit1.html#tabset",
+    "href": "units/unit1.html#tabset",
+    "title": "Unit 1: Intro",
+    "section": "Tabset",
+    "text": "Tabset\n\nRPython\n\n\nThis code is not executed.\nfizz_buzz &lt;- function(fbnums = 1:50) {\n  output &lt;- dplyr::case_when(\n    fbnums %% 15 == 0 ~ \"FizzBuzz\",\n    fbnums %% 3 == 0 ~ \"Fizz\",\n    fbnums %% 5 == 0 ~ \"Buzz\",\n    TRUE ~ as.character(fbnums)\n  )\n  print(output)\n}\n\nfizz_buzz(3)\n\n\nThis code is executed.\n\n\nCode\ndef fizz_buzz(num):\n  if num % 15 == 0:\n    print(\"FizzBuzz\")\n  elif num % 5 == 0:\n    print(\"Buzz\")\n  elif num % 3 == 0:\n    print(\"Fizz\")\n  else:\n    print(num)\n    \nfizz_buzz(3)\n\n\nFizz"
   },
   {
     "objectID": "syllabus.html",
@@ -211,354 +412,163 @@
     ]
   },
   {
-    "objectID": "units/unit1.html",
-    "href": "units/unit1.html",
-    "title": "Unit 1: Intro",
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Project for 156/256",
     "section": "",
-    "text": "[UNDER CONSTRUCTION]\nThis is an example of using qmd as the source document."
-  },
-  {
-    "objectID": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
-    "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
-    "title": "Unit 1: Intro",
-    "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.07633562413163733"
-  },
-  {
-    "objectID": "units/unit1.html#latex",
-    "href": "units/unit1.html#latex",
-    "title": "Unit 1: Intro",
-    "section": "\\(\\LaTeX\\)",
-    "text": "\\(\\LaTeX\\)\n\\[\n\\theta = \\int_0^\\infty f(x,\\theta)d\\theta\n\\]"
-  },
-  {
-    "objectID": "units/unit1.html#styled-div-via-direct-html",
-    "href": "units/unit1.html#styled-div-via-direct-html",
-    "title": "Unit 1: Intro",
-    "section": "Styled div via direct html",
-    "text": "Styled div via direct html\n\nThis content can be styled via the border class."
-  },
-  {
-    "objectID": "units/unit1.html#a-callout",
-    "href": "units/unit1.html#a-callout",
-    "title": "Unit 1: Intro",
-    "section": "A callout",
-    "text": "A callout\n\n\n\n\n\n\nTip with Title\n\n\n\nThis is an example of a callout with a title."
-  },
-  {
-    "objectID": "units/unit1.html#tabset",
-    "href": "units/unit1.html#tabset",
-    "title": "Unit 1: Intro",
-    "section": "Tabset",
-    "text": "Tabset\n\nRPython\n\n\nThis code is not executed.\nfizz_buzz &lt;- function(fbnums = 1:50) {\n  output &lt;- dplyr::case_when(\n    fbnums %% 15 == 0 ~ \"FizzBuzz\",\n    fbnums %% 3 == 0 ~ \"Fizz\",\n    fbnums %% 5 == 0 ~ \"Buzz\",\n    TRUE ~ as.character(fbnums)\n  )\n  print(output)\n}\n\nfizz_buzz(3)\n\n\nThis code is executed.\n\n\nCode\ndef fizz_buzz(num):\n  if num % 15 == 0:\n    print(\"FizzBuzz\")\n  elif num % 5 == 0:\n    print(\"Buzz\")\n  elif num % 3 == 0:\n    print(\"Fizz\")\n  else:\n    print(num)\n    \nfizz_buzz(3)\n\n\nFizz"
-  },
-  {
-    "objectID": "units/unit2.html",
-    "href": "units/unit2.html",
-    "title": "Unit 2: Next",
-    "section": "",
-    "text": "[UNDER CONSTRUCTION]\nThis is an example of using an ipynb file as source rather than qmd. It follows instructions from https://github.com/DS-100/course-notes/README.md.\nLink to the data."
-  },
-  {
-    "objectID": "units/unit2.html#latex",
-    "href": "units/unit2.html#latex",
-    "title": "Unit 2: Next",
-    "section": "\\(\\LaTeX\\)",
-    "text": "\\(\\LaTeX\\)\nHere is some \\(\\LaTeX\\). \\[\n\\theta = 7\n\\]"
-  },
-  {
-    "objectID": "units/unit2.html#evaluated-python-code",
-    "href": "units/unit2.html#evaluated-python-code",
-    "title": "Unit 2: Next",
-    "section": "Evaluated Python code",
-    "text": "Evaluated Python code\nNote that to get code output shown, the underlying notebook must have executed the code.\n\n\nCode\na=7\nprint(a)\n\n\n7"
-  },
-  {
-    "objectID": "units/unit2.html#callout",
-    "href": "units/unit2.html#callout",
-    "title": "Unit 2: Next",
-    "section": "Callout",
-    "text": "Callout\n\n\n\n\n\n\nTip with Title\n\n\n\nThis is an example of a callout with a title."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Statistics 156/256: Causal Inference",
-    "section": "",
-    "text": "Gradescope\n\n\nNo matching items\n\n\n\n\n\n\n\n\nReadings week 1\n\n\n\nThe reading for the first lecture is Chapter 1 of the textbook A first course in causal inference by Peng Ding. A preprint of the textbook is available on arXiv. The book is available in print here. Add promotion code JSM24 for additional discount (good thru end of September).\n\n\n\n\n\n\n\n\nReadings week 2\n\n\n\nThe reading for the second lecture is Chapter 2 of A first course in causal inference.\nThe readings for the third lecture are\n\nSection 2.1 of the textbook Causal inference: what if by James M. Robins and Miguel A. Hernán. Available online.\nChapter 3 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nReadings week 3\n\n\n\nThe reading for the fourth lecture is Chapters 4-6 of A first course in causal inference.\nThe readings for the fifth lecture is Chapters 7-9 of A first course in causal inference.\n\n\n\n\n\n\n\n\nReadings week 4\n\n\n\nThe reading for the 9/17 lecture is\n\nChapter 3 of Causal inference: what if.\nChapter 10 of A first course in causal inference.\n\nThe readings for the 9/19 lecture are\n\nSection 2.4 of Causal inference: what if.\nChapters 11-12 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nHomework 2 posted\n\n\n\nHomework 2 for 156 is posted in the Homeworks tab.\n\n\n\n\n\n\n\n\nHomework 1 and Reading assignment 1 grades released\n\n\n\nYou can see your grade on Gradescope. Note that starting with homework 2, we will deduct points for failure to properly assign your gradescope pages to the corresponding problem AND for failure to submit code for coding problems.\n\n\n\n\n\n\n\n\nReadings week 5\n\n\n\nThe readings for the 9/24 lecture are\n\nChapter 12 of A first course in causal inference.\nChapter 13 of Causal inference: what if.\n\nThe reading for the 9/26 lecture is\n\nChapter 13 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nReadings week 6\n\n\n\nThe readings for the 10/01 lecture are\n\nChapter 4 of Causal inference: what if.\nChapter 15 of A first course in causal inference.\n\nThe reading for the 10/03 lecture is\n\nChapters 6 and 7 of Causal inference: what if.\n\n\n\n\n\n\n\n\n\nHomework 3 posted\n\n\n\nHomework 3 for 156 is posted in the Homeworks tab.\n\n\n\n\n\n\n\n\nReadings week 7\n\n\n\nThe readings for the 10/08 lecture are\n\nChapter 16 of Causal inference: what if.\nChapter 16 of A first course in causal inference.\n\nThe reading for the 10/10 lecture is\n\nChapters 21-22 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nReadings week 8\n\n\n\nThere are no readings for the 10/15 lecture. Instead of a usual lecture, we will use this time for you to work on your group projects.\nThe reading for the 10/17 lecture is\n\nChapters 23 and 25 of A first course in causal inference.\n\n\n\n\n\n\n\n\n\nHomework 4 posted\n\n\n\nHomework 4 for 156 is posted in the Homeworks tab.",
+    "text": "Navigation\n\nProject Guidelines\n\n\n\nGuidelines\n\nDownload PDF",
     "crumbs": [
-      "Home / Schedule"
+      "Group Project"
     ]
   },
   {
-    "objectID": "homeworks.html",
-    "href": "homeworks.html",
-    "title": "Homeworks for 156",
-    "section": "",
-    "text": "Navigation\n\nHomework 1\nHomework 2\nHomework 3\n\n\n\nHomework 1\nDue: 9/10/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 2\nDue: 9/24/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 3\nDue: 10/08/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 4\nDue: 10/22/2024 11.59pm PT\n\nDownload PDF",
-    "crumbs": [
-      "Homeworks"
-    ]
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Reading assignments for 256",
-    "section": "",
-    "text": "Evaluation\nEach week those of you in 256 will read research papers and write a report describing the research and your evaluation of the work. Each report should be 2-3 pages double-spaced. See below for the list of papers and due dates. You will submit your report on gradescope.\nThe reports will be graded based on  • Correct identification of the research question  • Accurate summary of the method used in the papers  • Clear summary of the key results  • Thoughtful overall evaluation of the paper (e.g., evaluating the significance, novelty, relevance of the contribution)\n\n\nPapers\n\n\n\nReading\nLink\nDue date\n\n\n\n\nBickel et al 1975 Science: Sex Bias in Graduate Admissions: Data from Berkeley\nLink\n9/10/24\n\n\nHolland 1986 JASA Statistics and Causal Inference\nLink\n9/17/24\n\n\nMiratrix 2013 JRSSB Adjusting treatment effect estimates by post-stratication in randomized experiments\nLink\n9/24/24\n\n\nLin 2013 AOAS: Agnostic notes on regression adjustments to experimental data: Reexamining Freedmans critique\nLink\n10/01/24\n\n\nLi, Ding and Rubin 2018 PNAS Asymptotic theory of rerandomization in treatment-control experiments\nLink\n10/08/24\n\n\nRosenbaum and Rubin 1983 Biometrika: The central role of the propensity score in observational studies for causal effects\nLink\n10/15/24\n\n\nLunceford and Davidian 2004 SiM Stratification and weighting via the propensity score in estimation of causal treatment effects: a comparative study\nLink\n10/22/24\n\n\nAngrist Imbens and Rubin 1996 JASA Identification of causal effects using instrumental variables\nLink\n10/29/24\n\n\nImbens 2014 StatSci Instrumental Variables: An Econometricians Perspective\nLink\n11/5/24\n\n\nDing and VanderWeele 2016 Epidemiology: Sensitivity Analysis Without Assumptions\nLink\n11/12/24\n\n\nPearl 1995 Biometrika Causal diagrams for empirical research\nLink\n11/19/24\n\n\nFrangakis and Rubin 2002 Biometrics Principal stratification in causal inference\nLink\n11/26/24",
-    "crumbs": [
-      "Reading assignments"
-    ]
-  },
-  {
-    "objectID": "units/macros.html",
-    "href": "units/macros.html",
+    "objectID": "quarto_env/lib/python3.7/site-packages/pyzmq-26.1.0.dist-info/licenses/LICENSE.html",
+    "href": "quarto_env/lib/python3.7/site-packages/pyzmq-26.1.0.dist-info/licenses/LICENSE.html",
     "title": "",
     "section": "",
-    "text": "\\[\n\\newcommand{\\trans}{^\\mathsf{T}}\n\\newcommand{\\eps}{\\epsilon}\n\\]"
+    "text": "BSD 3-Clause License\nCopyright (c) 2009-2012, Brian Granger, Min Ragan-Kelley\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
   },
   {
-    "objectID": "units/unit3.html",
-    "href": "units/unit3.html",
-    "title": "Unit 3: More",
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html",
+    "title": "The Jupyter licensing terms",
     "section": "",
-    "text": "[UNDER CONSTRUCTION]\nThis is an example of using qmd as the source document with pdf as one target. I’ve taken out the qmd stuff that doesn’t seem to render to pdf."
+    "text": "Jupyter is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2015-, Jupyter Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the Jupyter Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects. A full list with details is kept in the documentation directory, in the file about/credits.txt.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/.\n\n\n\nJupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. It is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
   },
   {
-    "objectID": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
-    "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
-    "title": "Unit 3: More",
-    "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.08127400051977647"
-  },
-  {
-    "objectID": "units/unit3.html#latex",
-    "href": "units/unit3.html#latex",
-    "title": "Unit 3: More",
-    "section": "LaTeX",
-    "text": "LaTeX\n\\[\n\\theta = \\int_0^\\infty f(x,\\theta)d\\theta\n\\]"
-  },
-  {
-    "objectID": "units/unit3.html#latex-macro",
-    "href": "units/unit3.html#latex-macro",
-    "title": "Unit 3: More",
-    "section": "LaTeX macro",
-    "text": "LaTeX macro\n\nWarning: having include-before-body in the yaml header of this file, as seemingly needed to enable macros, causes extra space at top of page.\n\n\\[\nA = X \\trans Y\n\\]"
-  },
-  {
-    "objectID": "staff.html",
-    "href": "staff.html",
-    "title": "Staff",
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
+    "title": "The Jupyter licensing terms",
     "section": "",
-    "text": "Office hours are subject to change.\n\n\n\nInstructor: Amanda Coston acoston@berkeley.edu Office hours:  • Thursday 4:00-5:00 PM, Evans 427 \n\n\nGSI: Mingrui Zhang mingrui_zhang@berkeley.edu Office hours: TBD • Mondays: 2:00-4:00 PM, Evans 428  • Tuesdays: 9:00-11:00 AM, Evans 428",
-    "crumbs": [
-      "Staff"
-    ]
+    "text": "The Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects. A full list with details is kept in the documentation directory, in the file about/credits.txt.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/."
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "License",
+    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "href": "quarto_env/lib/python3.7/site-packages/jupyter_core-4.12.0.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "title": "The Jupyter licensing terms",
     "section": "",
-    "text": "This work is licensed under a Creative Commons Attribution 4.0 International License.",
-    "crumbs": [
-      "License"
-    ]
+    "text": "Jupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. It is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html",
-    "href": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html",
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/UnicodePy3.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/UnicodePy3.html",
+    "title": "",
+    "section": "",
+    "text": "print('☃')\n\n☃"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Other Comms.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Other Comms.html",
+    "title": "",
+    "section": "",
+    "text": "from ipykernel.comm import Comm\n\n\ncomm = Comm('this-comm-tests-a-missing-handler', data={'id': 'foo'})\n\n\ncomm.send(data={'id': 'bar'})"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Disable Stdin.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Disable Stdin.html",
+    "title": "",
+    "section": "",
+    "text": "try:\n    input = raw_input\nexcept:\n    pass\n\nname = input(\"name: \")"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/update-display-id.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/update-display-id.html",
+    "title": "",
+    "section": "",
+    "text": "ip = get_ipython()\n\nfrom IPython.display import display\n\ndef display_with_id(obj, display_id, update=False, execute_result=False):\n    iopub = ip.kernel.iopub_socket\n    session = get_ipython().kernel.session\n    data, md = ip.display_formatter.format(obj)\n    transient = {'display_id': str(display_id)}\n    content = {'data': data, 'metadata': md, 'transient': transient}\n    if execute_result:\n      msg_type = 'execute_result'\n      content['execution_count'] = ip.execution_count\n    else:\n      msg_type = 'update_display_data' if update else 'display_data'\n    session.send(iopub, msg_type, content, parent=ip.parent_header)\n\n\ndisplay('above')\ndisplay_with_id(1, 'here')\ndisplay('below')\n\n'above'\n\n\n8\n\n\n'below'\n\n\n\ndisplay_with_id(2, 'here')\ndisplay_with_id(3, 'there')\ndisplay_with_id(4, 'here')\n\n8\n\n\n6\n\n\n8\n\n\n\ndisplay_with_id(5, 'there')\ndisplay_with_id(6, 'there', update=True)\n\n6\n\n\n\ndisplay_with_id(7, 'here')\ndisplay_with_id(8, 'here', update=True)\ndisplay_with_id(9, 'result', execute_result=True)\n\n8\n\n\n10\n\n\n\ndisplay_with_id(10, 'result', update=True)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Interrupt.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Interrupt.html",
+    "title": "",
+    "section": "",
+    "text": "while True: continue\n\n\n---------------------------------------------------------------------------\nKeyboardInterrupt                         Traceback (most recent call last)\n&lt;ipython-input-1-31d18a52bf41&gt; in &lt;module&gt;\n----&gt; 1 while True: continue\n\nKeyboardInterrupt: \n\n\n\n\nprint(\"done\")\n\ndone"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions with Cell Tags.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions with Cell Tags.html",
+    "title": "",
+    "section": "",
+    "text": "import sys\nprint(\"hello\")\nprint(\"errorred\", file=sys.stderr)\n# üñîçø∂é\nraise Exception(\"message\")\n\nhello\n\n\nerrorred\n\n\n\n---------------------------------------------------------------------------\nException                                 Traceback (most recent call last)\nCell In[1], line 5\n      3 print(\"errorred\", file=sys.stderr)\n      4 # üñîçø∂é\n----&gt; 5 raise Exception(\"message\")\n\nException: message\n\n\n\n\nprint('ok')\n\nok"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Output.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Output.html",
+    "title": "",
+    "section": "",
+    "text": "import ipywidgets as widgets\nfrom IPython.display import clear_output\noutput1 = widgets.Output()\noutput1\n\n\n\n\n\nprint(\"hi\")\nwith output1:\n    print(\"in output\")\n\nhi\n\n\n\nwith output1:\n    raise ValueError(\"trigger msg_type=error\")\n\n\nimport ipywidgets as widgets\noutput2 = widgets.Output()\noutput2\n\n\n\n\n\nprint(\"hi2\")\nwith output2:\n    print(\"in output2\")\n    clear_output(wait=True)\n\nhi2\n\n\n\nimport ipywidgets as widgets\noutput3 = widgets.Output()\noutput3\n\n\n\n\n\nprint(\"hi3\")\nwith output3:\n    print(\"hello\")\n    clear_output(wait=True)\n    print(\"world\")\n\nhi3\n\n\n\nimport ipywidgets as widgets\noutput4 = widgets.Output()\noutput4\n\n\n\n\n\nprint(\"hi4\")\nwith output4:\n    print(\"hello world\")\n    clear_output()\n\nhi4\n\n\n\nimport ipywidgets as widgets\noutput5 = widgets.Output()\noutput5\n\n\n\n\n\nprint(\"hi5\")\nwith output5:\n    display(\"hello world\") # this is not a stream but plain text\nclear_output()\n\n\nimport ipywidgets as widgets\noutput_outer = widgets.Output()\noutput_inner = widgets.Output()\noutput_inner\n\n\n\n\n\noutput_outer\n\n\n\n\n\nwith output_inner:\n    print('in inner')\n    with output_outer:\n        print('in outer')\n    print('also in inner')"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute A.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute A.html",
+    "title": "Ensure notebooks can execute in parallel",
+    "section": "",
+    "text": "This notebook uses a file system based “lock” to assert that two instances of the notebook kernel will run in parallel. Each instance writes to a file in a temporary directory, and then tries to read the other file from the temporary directory, so that running them in sequence will fail, but running them in parallel will succeed.\nTwo notebooks are launched, each which sets the this_notebook variable. One notebook is set to this_notebook = 'A' and the other this_notebook = 'B'.\n\nimport os\nimport os.path\nimport tempfile\nimport time\n\n\n# the variable this_notebook is injectected in a cell above by the test framework.\nthis_notebook = 'A'\nother_notebook = 'B'\ndirectory = os.environ['NBEXECUTE_TEST_PARALLEL_TMPDIR']\nwith open(os.path.join(directory, 'test_file_{}.txt'.format(this_notebook)), 'w') as f:\n    f.write('Hello from {}'.format(this_notebook))\n\n\nstart = time.time()\ntimeout = 5\nend = start + timeout\ntarget_file = os.path.join(directory, 'test_file_{}.txt'.format(other_notebook))\nwhile time.time() &lt; end:\n    time.sleep(0.1)\n    if os.path.exists(target_file):\n        with open(target_file, 'r') as f:\n            text = f.read()\n        if text == 'Hello from {}'.format(other_notebook):\n            break\nelse:\n    assert False, \"Timed out – didn't get a message from {}\".format(other_notebook)"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Execution with Cell Tag.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Execution with Cell Tag.html",
+    "title": "",
+    "section": "",
+    "text": "print(\"a long running cell\")\n\n\nprint('ok')\n\nok"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Unicode.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Unicode.html",
+    "title": "",
+    "section": "",
+    "text": "print('☃')\n\n☃"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Sleep1s.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Sleep1s.html",
+    "title": "",
+    "section": "",
+    "text": "import time\nimport datetime\n\n\nt0 = datetime.datetime.utcnow()\ntime.sleep(1)\nt1 = datetime.datetime.utcnow()\n\n\ntime_format = '%Y-%m-%dT%H:%M:%S.%fZ'\nprint(t0.strftime(time_format), end='')\n\n\nprint(t1.strftime(time_format), end='')"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions.html",
+    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Skip Exceptions.html",
+    "title": "",
+    "section": "",
+    "text": "# üñîçø∂é\nraise Exception(\"message\")\n\n\n---------------------------------------------------------------------------\nException                                 Traceback (most recent call last)\n&lt;ipython-input-1-9abc744909d9&gt; in &lt;module&gt;\n      1 # üñîçø∂é\n----&gt; 2 raise Exception(\"message\")\n\nException: message\n\n\n\n\nprint('ok')\n\nok"
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/idna-3.7.dist-info/LICENSE.html",
+    "href": "quarto_env/lib/python3.7/site-packages/idna-3.7.dist-info/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "BSD 3-Clause License\nCopyright (c) 2013-2024, Kim Davies and contributors. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html",
+    "href": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html",
     "title": "Licensing terms",
     "section": "",
-    "text": "This project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2015, IPython Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the IPython Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/.\n\n\n\nIPython uses a shared copyright model. Each contributor maintains copyright over their contributions to IPython. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the IPython source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire IPython Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the IPython repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) IPython Development Team.\n# Distributed under the terms of the Modified BSD License."
+    "text": "Traitlets is adapted from enthought.traits, Copyright (c) Enthought, Inc., under the terms of the Modified BSD License.\nThis project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2001-, IPython Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the IPython Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/.\n\n\n\nIPython uses a shared copyright model. Each contributor maintains copyright over their contributions to IPython. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the IPython source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire IPython Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the IPython repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) IPython Development Team.\n# Distributed under the terms of the Modified BSD License."
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
-    "href": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
+    "objectID": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
+    "href": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#about-the-ipython-development-team",
     "title": "Licensing terms",
     "section": "",
-    "text": "The IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/ipython/."
+    "text": "The IPython Development Team is the set of all contributors to the IPython project. This includes all of the IPython subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/."
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#our-copyright-policy",
-    "href": "quarto_env/lib/python3.7/site-packages/ipykernel-6.16.2.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "objectID": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#our-copyright-policy",
+    "href": "quarto_env/lib/python3.7/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.html#our-copyright-policy",
     "title": "Licensing terms",
     "section": "",
     "text": "IPython uses a shared copyright model. Each contributor maintains copyright over their contributions to IPython. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the IPython source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire IPython Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the IPython repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) IPython Development Team.\n# Distributed under the terms of the Modified BSD License."
   },
   {
-    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html",
-    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html",
-    "title": "Authors",
+    "objectID": "videos.html",
+    "href": "videos.html",
+    "title": "Video Paper Presentations for 256",
     "section": "",
-    "text": "pyqode.qt: Colin Duquesnoy (@ColinDuquesnoy)\nspyderlib.qt: Pierre Raybaut (@PierreRaybaut)\nqt-helpers: Thomas Robitaille (@astrofrog)\n\n\n\n\n\nDaniel Althviz (@dalthviz)\nCarlos Cordoba (@ccordoba12)\nC.A.M. Gerlach (@CAM-Gerlach)\nSpyder Development Team (Spyder-IDE)\n\n\n\n\n\nThe QtPy Contributors"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#original-authors",
-    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#original-authors",
-    "title": "Authors",
-    "section": "",
-    "text": "pyqode.qt: Colin Duquesnoy (@ColinDuquesnoy)\nspyderlib.qt: Pierre Raybaut (@PierreRaybaut)\nqt-helpers: Thomas Robitaille (@astrofrog)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#current-maintainers",
-    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#current-maintainers",
-    "title": "Authors",
-    "section": "",
-    "text": "Daniel Althviz (@dalthviz)\nCarlos Cordoba (@ccordoba12)\nC.A.M. Gerlach (@CAM-Gerlach)\nSpyder Development Team (Spyder-IDE)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#contributors",
-    "href": "quarto_env/lib/python3.7/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html#contributors",
-    "title": "Authors",
-    "section": "",
-    "text": "The QtPy Contributors"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html",
-    "title": "Licensing terms",
-    "section": "",
-    "text": "This project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2001-2015, IPython Development Team\nCopyright (c) 2015-, Jupyter Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the Jupyter Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/.\n\n\n\nJupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#about-the-jupyter-development-team",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#about-the-jupyter-development-team",
-    "title": "Licensing terms",
-    "section": "",
-    "text": "The Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#our-copyright-policy",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_server-1.24.0.dist-info/COPYING.html#our-copyright-policy",
-    "title": "Licensing terms",
-    "section": "",
-    "text": "Jupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/JupyterWidgets.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/JupyterWidgets.html",
-    "title": "",
-    "section": "",
-    "text": "import ipywidgets\nlabel = ipywidgets.Label('Hello World')\ndisplay(label)\n\n\n\n\n\n# it should also handle custom msg'es\nlabel.send({'msg': 'Hello'})"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/SVG.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/SVG.html",
-    "title": "",
-    "section": "",
-    "text": "from IPython.display import SVG\n\n\nSVG(data='''\n&lt;svg height=\"100\" width=\"100\"&gt;\n    &lt;circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"2\" fill=\"red\" /&gt;\n&lt;/svg&gt;''')"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Autokill.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Autokill.html",
-    "title": "",
-    "section": "",
-    "text": "import os\nimport signal\npid = os.getpid()\nos.kill(pid, signal.SIGTERM)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Inline Image.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Inline Image.html",
-    "title": "",
-    "section": "",
-    "text": "from IPython.display import Image\n\n\nImage('python.png')"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Factorials.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Factorials.html",
-    "title": "",
-    "section": "",
-    "text": "i, j = 1, 1\n\n\nfor m in range(10):\n    i, j = j, i + j\n    print(j)\n\n2\n3\n5\n8\n13\n21\n34\n55\n89\n144"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Check History in Memory.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Check History in Memory.html",
-    "title": "",
-    "section": "",
-    "text": "from IPython import get_ipython\n\n\nip = get_ipython()\nassert ip.history_manager.hist_file == ':memory:'"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Clear Output.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Clear Output.html",
-    "title": "",
-    "section": "",
-    "text": "from __future__ import print_function\nfrom IPython.display import clear_output\n\n\nfor i in range(10):\n    clear_output()\n    print(i)\n\n9\n\n\n\nprint(\"Hello world\")\nclear_output()\n\n\nprint(\"Hello world\", end='')\nclear_output(wait=True)  # no output after this\n\nHello world\n\n\n\nprint(\"Hello\", end='')\nclear_output(wait=True)  # here we have new output after wait=True\nprint(\"world\", end='')\n\nworld\n\n\n\nhandle0 = display(\"Hello world\", display_id=\"id0\")\n\n'Hello world'\n\n\n\nhandle1 = display(\"Hello\", display_id=\"id1\")\n\n'world'\n\n\n\nhandle1.update('world')\n\n\nhandle2 = display(\"Hello world\", display_id=\"id2\")\nclear_output()  # clears all output, also with display_ids\n\n\nhandle3 = display(\"Hello world\", display_id=\"id3\")\nclear_output(wait=True)\n\n'Hello world'\n\n\n\nhandle4 = display(\"Hello\", display_id=\"id4\")\nclear_output(wait=True)\nprint('world', end='')\n\nworld\n\n\n\nhandle4.update('Hello world')  # it is cleared, so it should not show up in the above cell"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Empty Cell.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Empty Cell.html",
-    "title": "",
-    "section": "",
-    "text": "Test that executing skips over an empty cell.\n\n\"Code 1\"\n\n'Code 1'\n\n\n\n\"Code 2\"\n\n'Code 2'"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute B.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Parallel Execute B.html",
-    "title": "Ensure notebooks can execute in parallel",
-    "section": "",
-    "text": "This notebook uses a file system based “lock” to assert that two instances of the notebook kernel will run in parallel. Each instance writes to a file in a temporary directory, and then tries to read the other file from the temporary directory, so that running them in sequence will fail, but running them in parallel will succeed.\nTwo notebooks are launched, each which sets the this_notebook variable. One notebook is set to this_notebook = 'A' and the other this_notebook = 'B'.\n\nimport os\nimport os.path\nimport tempfile\nimport time\n\n\n# the variable this_notebook is injectected in a cell above by the test framework.\nthis_notebook = 'B'\nother_notebook = 'A'\ndirectory = os.environ['NBEXECUTE_TEST_PARALLEL_TMPDIR']\nwith open(os.path.join(directory, 'test_file_{}.txt'.format(this_notebook)), 'w') as f:\n    f.write('Hello from {}'.format(this_notebook))\n\n\nstart = time.time()\ntimeout = 5\nend = start + timeout\ntarget_file = os.path.join(directory, 'test_file_{}.txt'.format(other_notebook))\nwhile time.time() &lt; end:\n    time.sleep(0.1)\n    if os.path.exists(target_file):\n        with open(target_file, 'r') as f:\n            text = f.read()\n        if text == 'Hello from {}'.format(other_notebook):\n            break\nelse:\n    assert False, \"Timed out – didn't get a message from {}\".format(other_notebook)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/HelloWorld.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/HelloWorld.html",
-    "title": "",
-    "section": "",
-    "text": "print(\"Hello World\")\n\nHello World"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Error.html",
-    "href": "quarto_env/lib/python3.7/site-packages/nbclient/tests/files/Error.html",
-    "title": "",
-    "section": "",
-    "text": "0/0\n\n\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)\n/tmp/ipykernel_1277493/182040962.py in &lt;module&gt;\n----&gt; 1 0/0\n\nZeroDivisionError: division by zero"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html",
-    "title": "Licensing terms",
-    "section": "",
-    "text": "This project is licensed under the terms of the Modified BSD License (also known as New or Revised or 3-Clause BSD), as follows:\n\nCopyright (c) 2001-2015, IPython Development Team\nCopyright (c) 2015-, Jupyter Development Team\n\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the Jupyter Development Team nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThe Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/.\n\n\n\nJupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#about-the-jupyter-development-team",
-    "title": "Licensing terms",
-    "section": "",
-    "text": "The Jupyter Development Team is the set of all contributors to the Jupyter project. This includes all of the Jupyter subprojects.\nThe core team that coordinates development on GitHub can be found here: https://github.com/jupyter/."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#our-copyright-policy",
-    "href": "quarto_env/lib/python3.7/site-packages/jupyter_client-7.4.9.dist-info/licenses/COPYING.html#our-copyright-policy",
-    "title": "Licensing terms",
-    "section": "",
-    "text": "Jupyter uses a shared copyright model. Each contributor maintains copyright over their contributions to Jupyter. But, it is important to note that these contributions are typically only changes to the repositories. Thus, the Jupyter source code, in its entirety is not the copyright of any single person or institution. Instead, it is the collective copyright of the entire Jupyter Development Team. If individual contributors want to maintain a record of what changes/contributions they have specific copyright on, they should indicate their copyright in the commit message of the change, when they commit the change to one of the Jupyter repositories.\nWith this in mind, the following banner should be used in any source code file to indicate the copyright and license terms:\n# Copyright (c) Jupyter Development Team.\n# Distributed under the terms of the Modified BSD License."
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html",
-    "href": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html",
-    "title": "UAT for NbAgg backend.",
-    "section": "",
-    "text": "from imp import reload\nThe first line simply reloads matplotlib, uses the nbagg backend and then reloads the backend, just to ensure we have the latest modification to the backend code. Note: The underlying JavaScript will not be updated by this process, so a refresh of the browser after clearing the output and saving is necessary to clear everything fully.\nimport matplotlib\nreload(matplotlib)\n\nmatplotlib.use('nbagg')\n\nimport matplotlib.backends.backend_nbagg\nreload(matplotlib.backends.backend_nbagg)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html#uat-13---animation",
-    "href": "quarto_env/lib/python3.7/site-packages/matplotlib/backends/web_backend/nbagg_uat.html#uat-13---animation",
-    "title": "UAT for NbAgg backend.",
-    "section": "UAT 13 - Animation",
-    "text": "UAT 13 - Animation\nThe following should generate an animated line:\n\nimport matplotlib.animation as animation\nimport numpy as np\n\nfig, ax = plt.subplots()\n\nx = np.arange(0, 2*np.pi, 0.01)        # x-array\nline, = ax.plot(x, np.sin(x))\n\ndef animate(i):\n    line.set_ydata(np.sin(x+i/10.0))  # update the data\n    return line,\n\n#Init only required for blitting to give a clean slate.\ndef init():\n    line.set_ydata(np.ma.array(x, mask=True))\n    return line,\n\nani = animation.FuncAnimation(fig, animate, np.arange(1, 200), init_func=init,\n                              interval=100., blit=True)\nplt.show()\n\n\nUAT 14 - Keyboard shortcuts in IPython after close of figure\nAfter closing the previous figure (with the close button above the figure) the IPython keyboard shortcuts should still function.\n\n\nUAT 15 - Figure face colours\nThe nbagg honours all colours apart from that of the figure.patch. The two plots below should produce a figure with a red background. There should be no yellow figure.\n\nimport matplotlib\nmatplotlib.rcParams.update({'figure.facecolor': 'red',\n                            'savefig.facecolor': 'yellow'})\nplt.figure()\nplt.plot([3, 2, 1])\n\nplt.show()\n\n\n\nUAT 16 - Events\nPressing any keyboard key or mouse button (or scrolling) should cycle the line line while the figure has focus. The figure should have focus by default when it is created and re-gain it by clicking on the canvas. Clicking anywhere outside of the figure should release focus, but moving the mouse out of the figure should not release focus.\n\nimport itertools\nfig, ax = plt.subplots()\nx = np.linspace(0,10,10000)\ny = np.sin(x)\nln, = ax.plot(x,y)\nevt = []\ncolors = iter(itertools.cycle(['r', 'g', 'b', 'k', 'c']))\ndef on_event(event):\n    if event.name.startswith('key'):\n        fig.suptitle('%s: %s' % (event.name, event.key))\n    elif event.name == 'scroll_event':\n        fig.suptitle('%s: %s' % (event.name, event.step))\n    else:\n        fig.suptitle('%s: %s' % (event.name, event.button))\n    evt.append(event)\n    ln.set_color(next(colors))\n    fig.canvas.draw()\n    fig.canvas.draw_idle()\n\nfig.canvas.mpl_connect('button_press_event', on_event)\nfig.canvas.mpl_connect('button_release_event', on_event)\nfig.canvas.mpl_connect('scroll_event', on_event)\nfig.canvas.mpl_connect('key_press_event', on_event)\nfig.canvas.mpl_connect('key_release_event', on_event)\n\nplt.show()\n\n\n\nUAT 17 - Timers\nSingle-shot timers follow a completely different code path in the nbagg backend than regular timers (such as those used in the animation example above.) The next set of tests ensures that both “regular” and “single-shot” timers work properly.\nThe following should show a simple clock that updates twice a second:\n\nimport time\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center')\n\ndef update(text):\n    text.set(text=time.ctime())\n    text.axes.figure.canvas.draw()\n    \ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\ntimer.start()\nplt.show()\n\nHowever, the following should only update once and then stop:\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center') \ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\n\ntimer.single_shot = True\ntimer.start()\n\nplt.show()\n\nAnd the next two examples should never show any visible text at all:\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center')\ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\n\ntimer.start()\ntimer.stop()\n\nplt.show()\n\n\nfig, ax = plt.subplots()\ntext = ax.text(0.5, 0.5, '', ha='center')\ntimer = fig.canvas.new_timer(500, [(update, [text], {})])\n\ntimer.single_shot = True\ntimer.start()\ntimer.stop()\n\nplt.show()\n\n\n\nUAT 18 - stopping figure when removed from DOM\nWhen the div that contains from the figure is removed from the DOM the figure should shut down it’s comm, and if the python-side figure has no more active comms, it should destroy the figure. Repeatedly running the cell below should always have the same figure number\n\nfig, ax = plt.subplots()\nax.plot(range(5))\nplt.show()\n\nRunning the cell below will re-show the figure. After this, re-running the cell above should result in a new figure number.\n\nfig.canvas.manager.reshow()\n\n\n\nUAT 19 - Blitting\nClicking on the figure should plot a green horizontal line moving up the axes.\n\nimport itertools\n\ncnt = itertools.count()\nbg = None\n\ndef onclick_handle(event):\n    \"\"\"Should draw elevating green line on each mouse click\"\"\"\n    global bg\n    if bg is None:\n        bg = ax.figure.canvas.copy_from_bbox(ax.bbox) \n    ax.figure.canvas.restore_region(bg)\n\n    cur_y = (next(cnt) % 10) * 0.1\n    ln.set_ydata([cur_y, cur_y])\n    ax.draw_artist(ln)\n    ax.figure.canvas.blit(ax.bbox)\n\nfig, ax = plt.subplots()\nax.plot([0, 1], [0, 1], 'r')\nln, = ax.plot([0, 1], [0, 0], 'g', animated=True)\nplt.show()\nax.figure.canvas.draw()\n\nax.figure.canvas.mpl_connect('button_press_event', onclick_handle)"
-  },
-  {
-    "objectID": "quarto_env/lib/python3.7/site-packages/soupsieve-2.4.1.dist-info/licenses/LICENSE.html",
-    "href": "quarto_env/lib/python3.7/site-packages/soupsieve-2.4.1.dist-info/licenses/LICENSE.html",
-    "title": "",
-    "section": "",
-    "text": "MIT License\nCopyright (c) 2018 - 2023 Isaac Muse isaacmuse@gmail.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-  },
-  {
-    "objectID": "calendar.html",
-    "href": "calendar.html",
-    "title": "Calendar",
-    "section": "",
-    "text": "[UNDER CONSTRUCTION]\nWe can just embed the iframe html:"
+    "text": "Navigation\n\nGuidelines\n\n\n\nGuidelines\n\nDownload PDF",
+    "crumbs": [
+      "Video presentations"
+    ]
   }
 ]
