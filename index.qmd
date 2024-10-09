@@ -95,3 +95,15 @@ The reading for the 10/10 lecture is
 
 1.  Chapters 21-22 of _A first course in causal inference_.
 :::
+
+::: {.callout-note title="Readings week 8"}
+There are no readings for the 10/15 lecture. Instead of a usual lecture, we will use this time for you to work on your group projects. 
+
+The reading for the 10/17 lecture is
+
+1.  Chapters 23 and 25 of _A first course in causal inference_.
+:::
+
+::: {.callout-note title="Homework 4 posted"}
+Homework 4 for 156 is posted in the Homeworks tab.
+:::
