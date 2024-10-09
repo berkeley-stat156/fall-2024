@@ -11,7 +11,7 @@ title: "Video Paper Presentations for 256"
 - [Download PDF](./VideoGuidelines.pdf)
 
 <embed
-	src="./ProjectGuidelines.pdf"
+	src="./VideoGuidelines.pdf"
 	type="application/pdf"
 	width="100%"
 	height="500px"
