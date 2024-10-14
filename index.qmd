@@ -111,3 +111,13 @@ Homework 4 for 156 is posted in the Homeworks tab.
 ::: {.callout-note title="Guidelines posted for 256 Paper Presentation Videos"}
 Guidelines for the 256 presentations on academic papers are available in the Video presentations tab.
 :::
+
+::: {.callout-note title="Readings week 9"}
+The reading for the 10/22 lecture is
+
+1. Chapter 20 of _A first course in causal inference_. 
+
+The reading for the 10/24 lecture is
+
+1.  Chapter 24 of _A first course in causal inference_.
+:::
