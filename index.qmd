@@ -121,3 +121,32 @@ The reading for the 10/24 lecture is
 
 1.  Chapter 24 of _A first course in causal inference_.
 :::
+
+::: {.callout-note title="Readings week 10"}
+There is no lecture on 10/29 as there is an in-class midterm.
+
+The reading for the 10/31 lecture is
+
+1.  Chapters 17-18 of _A first course in causal inference_.
+:::
+
+::: {.callout-note title="Readings week 11"}
+The reading for the 11/5 lecture is
+
+1. Chapter 19 of _A first course in causal inference_. 
+
+The reading for the 11/7 lecture is
+
+1.  Chapter 26 of _A first course in causal inference_.
+:::
+
+::: {.callout-note title="Readings week 12"}
+The reading for the 11/14 lecture is
+
+1. Chapter 23 of _Causal inference: what if_.
+2. Chapter 27 of _A first course in causal inference_. 
+
+The reading for the 11/19 lecture is
+
+1.  Chapters 28-29 of _A first course in causal inference_.
+:::
