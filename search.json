@@ -248,7 +248,7 @@
     "href": "units/unit3.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 3: More",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.20642024878709495"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.14119351145235165"
   },
   {
     "objectID": "units/unit3.html#latex",
@@ -286,7 +286,7 @@
     "href": "homeworks.html",
     "title": "Homeworks for 156",
     "section": "",
-    "text": "Navigation\n\nHomework 1\nHomework 2\nHomework 3\nHomework 4\n\n\n\nHomework 1\nDue: 9/10/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 2\nDue: 9/24/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 3\nDue: 10/08/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 4\nDue: 10/22/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 5\nDue: 11/12/2024 11.59pm PT\n\nDownload PDF",
+    "text": "Navigation\n\nHomework 1\nHomework 2\nHomework 3\nHomework 4\nHomework 5\n\n\n\nHomework 1\nDue: 9/10/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 2\nDue: 9/24/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 3\nDue: 10/08/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 4\nDue: 10/22/2024 11.59pm PT\n\nDownload PDF\n\n\n\n\nHomework 5\nDue: 11/12/2024 11.59pm PT\n\nDownload PDF",
     "crumbs": [
       "Homeworks"
     ]
@@ -341,7 +341,7 @@
     "href": "units/unit1.html#evaluated-python-code-chunk-with-a-plot",
     "title": "Unit 1: Intro",
     "section": "Evaluated Python code chunk, with a plot",
-    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n-0.26234241883467413"
+    "text": "Evaluated Python code chunk, with a plot\n\n\nCode\nimport numpy as np\nx = np.random.normal(size=100)\nimport matplotlib.pyplot as plt\nplt.hist(x)\nplt.show()\nnp.mean(x)\n\n\n\n\n\n\n\n\n\n0.10734766854609591"
   },
   {
     "objectID": "units/unit1.html#latex",
