@@ -150,3 +150,8 @@ The reading for the 11/19 lecture is
 
 1.  Chapters 28-29 of _A first course in causal inference_.
 :::
+
+
+::: {.callout-note title="Homework 5 posted"}
+Homework 5 for 156 is posted in the Homeworks tab.
+:::
