@@ -140,18 +140,37 @@ The reading for the 11/7 lecture is
 1.  Chapter 26 of _A first course in causal inference_.
 :::
 
+::: {.callout-note title="Homework 5 posted"}
+Homework 5 for 156 is posted in the Homeworks tab.
+:::
+
 ::: {.callout-note title="Readings week 12"}
-The reading for the 11/14 lecture is
+The reading for the 11/12 lecture is
 
 1. Chapter 23 of _Causal inference: what if_.
 2. Chapter 27 of _A first course in causal inference_. 
 
-The reading for the 11/19 lecture is
-
-1.  Chapters 28-29 of _A first course in causal inference_.
+There is no lecture on 11/14 due to [BSTARS](https://statistics.berkeley.edu/research/industry/berkeley-statistics-annual-research-symposium-bstars#:~:text=The%20Berkeley%20Statistics%20Annual%20Research,statistical%20problems%20encountered%20in%20industry.). Check out the event starting at 1 pm at Memorial Stadiu,/
 :::
 
 
-::: {.callout-note title="Homework 5 posted"}
-Homework 5 for 156 is posted in the Homeworks tab.
+::: {.callout-note title="Homework 6 posted"}
+Homework 6 for 156 is posted in the Homeworks tab.
+:::
+
+::: {.callout-note title="Readings week 13"}
+
+The reading for the 11/19 lecture is
+
+1.  Chapters 28 of _A first course in causal inference_.
+
+The reading for the 11/21 lecture is
+
+1.  Chapters 29 of _A first course in causal inference_.
+:::
+
+::: {.callout-note title="Project presentations schedule"}
+256 Project Presentations will occur in class on 12/3.
+
+156 Project Presentations will occur in class on 12/5.
 :::
